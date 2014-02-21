@@ -1,8 +1,11 @@
+//BASE STYLES
 @import 'resets';
 @import 'foundation_and_overrides';
-@import 'variables';
 @import 'mixins';
+@import 'variables';
 @import 'defaults';
+@import "font-awesome";
+
+//PAGE STYLES
 @import 'pages/header';
 @import 'pages/home';
-@import "font-awesome";
