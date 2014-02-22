@@ -36,13 +36,34 @@
     .heading { margin-top: 15px; }
     padding: 80px 0px 60px 0px;
     text-align: center;
-    ul {
+    ul.critical_components {
       @include block-grid(
       $per-row: 3,
       $spacing: 3em,
       $base-style: true
       );
       margin-top:60px;
+    }
+    ul.critical_components_form {
+      @include block-grid(
+      $per-row: 3,
+      $spacing: 3em,
+      $base-style: true
+      );
+      margin-top: -50px;
+      input, span {
+        font-size: 1.5em;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+      select {
+        height: 50px;
+        font-size: 1.3em;
+      }
+      .row {
+        display: inline-block;
+      }
     }
   }
   section.fight_with_us {
@@ -57,5 +78,9 @@
       margin-top: 50px;
     }
     label { font-size: 1.5em; font-weight: bold; text-align: left; }
+  }
+  .home_page_sign_up_btn {
+    background-color: $dark-red;
+    &:hover { background-color: darken($dark-red, 15)}
   }
 }
