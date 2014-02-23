@@ -23,7 +23,7 @@ $grid-small-three: 1;
     p { margin-top: 1.5em; }
   }
   section.addiction {
-    padding: 80px 15px;
+    padding: 100px 15px 60px 15px;
     ul {
       @media #{$small} {
         @include block-grid(1, $block-grid-default-spacing, true);
