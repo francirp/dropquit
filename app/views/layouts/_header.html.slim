@@ -1,7 +1,7 @@
 header
   .row
     .large-2.small-12.medium-6.columns
-      = link_to 'DropQuit', root_path(@root, :anchor => 'top'), class: 'logo'
+      h1 = link_to 'DropQuit', root_path(@root)
     nav.nav-bar-right.large-8.small-12.columns
       ul.sign-in-btn
         - if current_user.present?
