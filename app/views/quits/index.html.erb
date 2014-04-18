@@ -1,0 +1,35 @@
+<h1>Listing quits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Length</th>
+      <th>Start date</th>
+      <th>Substance</th>
+      <th>Investment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quits.each do |quit| %>
+      <tr>
+        <td><%= quit.user_id %></td>
+        <td><%= quit.length %></td>
+        <td><%= quit.start_date %></td>
+        <td><%= quit.substance %></td>
+        <td><%= quit.investment %></td>
+        <td><%= link_to 'Show', quit %></td>
+        <td><%= link_to 'Edit', edit_quit_path(quit) %></td>
+        <td><%= link_to 'Destroy', quit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quit', new_quit_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@quit) do |f| %>
+  <% if @quit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quit.errors.count, "error") %> prohibited this quit from being saved:</h2>
+
+      <ul>
+      <% @quit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.number_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :substance %><br>
+    <%= f.text_field :substance %>
+  </div>
+  <div class="field">
+    <%= f.label :investment %><br>
+    <%= f.text_field :investment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

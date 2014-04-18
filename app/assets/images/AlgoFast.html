@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://localhost:3000/algofast_users/sign_up -->
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat js no-touch svg inlinesvg svgclippaths no-ie8compat"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AlgoFast</title>
+    <script data-turbolinks-track="true" src="./AlgoFast_files/jquery.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/jquery_ujs.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/handlebars.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/auto_complete_searches.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/jquery.validate.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/jquery.validate.min.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/security.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/strategies.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/userregistration.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/webusersignup.js" type="text/javascript"></script>
+<script data-turbolinks-track="true" src="./AlgoFast_files/application.js" type="text/javascript"></script>
+    <link href="./AlgoFast_files/application.css" media="all" rel="stylesheet" type="text/css">
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="3HlTnsw/qlD4M8xDkwGWdBoB31G+TiOg3HX64Uakml0=" name="csrf-token">
+  <style type="text/css">.recaptchatable td img{display:block}.recaptchatable .recaptcha_r1_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') 0 -63px no-repeat;width:318px;height:9px}.recaptchatable .recaptcha_r2_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -18px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r2_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -27px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r3_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') 0 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r3_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -18px -57px no-repeat;width:300px;height:6px}.recaptchatable .recaptcha_r3_c3{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -9px 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r4_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px 0 no-repeat;width:171px;height:49px}.recaptchatable .recaptcha_r4_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -36px 0 no-repeat;width:7px;height:57px}.recaptchatable .recaptcha_r4_c4{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -214px 0 no-repeat;width:97px;height:57px}.recaptchatable .recaptcha_r7_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:171px;height:8px}.recaptchatable .recaptcha_r8_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:25px;height:8px}.recaptchatable .recaptcha_image_cell center img{height:57px}.recaptchatable .recaptcha_image_cell center{height:57px}.recaptchatable .recaptcha_image_cell{background-color:white;height:57px}#recaptcha_area,#recaptcha_table{width:318px!important}.recaptchatable,#recaptcha_area tr,#recaptcha_area td,#recaptcha_area th{margin:0!important;border:0!important;padding:0!important;border-collapse:collapse!important;vertical-align:middle!important}.recaptchatable *{margin:0;padding:0;border:0;font-family:helvetica,sans-serif;font-size:8pt;color:black;position:static;top:auto;left:auto;right:auto;bottom:auto}.recaptchatable #recaptcha_image{position:relative;margin:auto}.recaptchatable #recaptcha_image #recaptcha_challenge_image{display:block}.recaptchatable #recaptcha_image #recaptcha_ad_image{display:block;position:absolute;top:0}.recaptchatable img{border:0!important;margin:0!important;padding:0!important}.recaptchatable a,.recaptchatable a:hover{cursor:pointer;outline:none;border:0!important;padding:0!important;text-decoration:none;color:blue;background:none!important;font-weight:normal}.recaptcha_input_area{position:relative!important;width:153px!important;height:45px!important;margin-left:7px!important;margin-right:7px!important;background:none!important}.recaptchatable label.recaptcha_input_area_text{margin:0!important;padding:0!important;position:static!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;background:none!important;height:auto!important;width:auto!important}.recaptcha_theme_red label.recaptcha_input_area_text,.recaptcha_theme_white label.recaptcha_input_area_text{color:black!important}.recaptcha_theme_blackglass label.recaptcha_input_area_text{color:white!important}.recaptchatable #recaptcha_response_field{width:153px!important;position:relative!important;bottom:7px!important;padding:0!important;margin:15px 0 0 0!important;font-size:10pt}.recaptcha_theme_blackglass #recaptcha_response_field,.recaptcha_theme_white #recaptcha_response_field{border:1px solid gray}.recaptcha_theme_red #recaptcha_response_field{border:1px solid #cca940}.recaptcha_audio_cant_hear_link{font-size:7pt;color:black}.recaptchatable{line-height:1!important}#recaptcha_instructions_error{color:red!important}.recaptcha_only_if_privacy{float:right;text-align:right}#recaptcha-ad-choices{position:absolute;height:15px;top:0;right:0}#recaptcha-ad-choices img{height:15px}.recaptcha-ad-choices-collapsed{width:15px;height:15px;display:block}.recaptcha-ad-choices-expanded{width:75px;height:15px;display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-collapsed{display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-expanded{display:block}
+
+.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style></head>
+  <body class="home" style="zoom: 1;">
+    <meta charset="utf-8">
+
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- Extranal CSS Files -->
+<link href="./AlgoFast_files/css" rel="stylesheet" type="text/css">
+<link href="./AlgoFast_files/css(1)" rel="stylesheet" type="text/css">
+
+<!-- Java Script files -->
+<script src="./AlgoFast_files/modernizr.foundation.js"></script>
+<script src="./AlgoFast_files/foundation.min.js"></script>
+<script src="./AlgoFast_files/app.js"></script>
+<!-- Mobile Menu -->
+<script src="./AlgoFast_files/topmenu.js"></script>
+<script src="./AlgoFast_files/jquery.validate.js" type="text/javascript"></script>
+<script src="./AlgoFast_files/userregistration.js" type="text/javascript"></script>
+
+<div class="mainWrap">
+  <div class="container">
+    <div class="headerSection">
+      <div class="containerInner">
+        <div class="logoSectionWrap">
+          <span class="headerAccountSection">
+            <ul>
+              <li>
+                <a href="http://localhost:3000/algofast_users/sign_in">Log In</a>
+              </li>
+              <li>
+                <a href="http://localhost:3000/home/index">Home</a>
+              </li>
+            </ul>
+          </span>
+          <span class="logowrap"><img style="float:left" src="./AlgoFast_files/logo.png"><div id="menu-icon"></div></span>
+        </div>
+        <nav id="nav-wrap">
+          <ul id="nav">
+            <li>
+              <a href="http://localhost:3000/algofast_users/sign_up#">News Feeds</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/algofast_users/sign_up#">Calendars</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/algofast_users/sign_up#">Tutorials</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/algofast_users/sign_up#">FAQ</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/algofast_users/sign_up#">10B5-1 Execution</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/algofast_users/sign_up#">User Defined Events</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <form accept-charset="UTF-8" action="http://localhost:3000/algofast_users" class="new_algofast_user" id="new_algofast_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="3HlTnsw/qlD4M8xDkwGWdBoB31G+TiOg3HX64Uakml0="></div>
+      <input type="hidden" id="email_flag" value="0">
+      <input id="product_id" name="product_id" type="hidden" value="1">
+
+      <div class="containerInner">
+        <div class="forgotPasswordWrap">
+          <div class="forgotPasswrord_innerSection">
+            <div class="forgot_innerBorder">
+              <div class="forgot_headerSection">
+                Sign Up
+              </div>
+              <div class="forgot_bodySection">
+                <div class="popMiddleContainerWrap paddingNone" id="singup_step_1">
+                  <h6> User Details </h6>
+                  <div class="popfieldsSectionRow paddingBot20">
+                    <div class="col2 left fieldpadd">
+                      <p> First Name </p>
+                      <input class="required" id="algofast_user_first_name" name="algofast_user[first_name]" size="30" type="text" value="">
+                    </div>
+
+                    <div class="col2 right fieldpadd">
+                      <p> Last Name </p>
+                      <input class="required" id="algofast_user_last_name" name="algofast_user[last_name]" size="30" type="text" value="">
+                    </div>
+
+                    <div class="col1 left fieldpadd">
+                      <p> Email Address </p>
+                      <label id="error_explanation1" class="error errorExplanation"></label>
+                      <input class="required" id="algofast_user_email" name="algofast_user[email]" size="30" type="email" value="">
+                    </div>
+
+                    <div class="col2 left fieldpadd">
+                      <p> Password </p>
+                      <input class="required" id="algofast_user_password" name="algofast_user[password]" size="30" type="password">
+                    </div>
+
+                    <div class="col2 right fieldpadd marginNone">
+                      <p> Confirm Password </p>
+                      <input class="required" id="algofast_user_password_confirmation" name="algofast_user[password_confirmation]" size="30" type="password">
+                    </div>
+                  </div>
+
+                  <h6><br> Address </h6>
+
+                  <div class="popfieldsSectionRow paddingBot20">
+                    <div class="col2 left fieldpadd">
+                      <p> Street </p>
+                      <input class="required" id="algofast_user_street" name="algofast_user[street]" size="30" type="text" value="">
+                    </div>
+
+                    <div class="col2 right fieldpadd">
+                      <p> City </p>
+                      <input class="required" id="algofast_user_city" name="algofast_user[city]" size="30" type="text" value="">
+                    </div>
+
+                    <div class="col2 left fieldpadd state">
+                      <p> State </p>
+                      <select class="required" id="algofast_user_state" name="algofast_user[state]"><option value=""></option>
+<option value="Alabama">Alabama</option>
+<option value="Alaska">Alaska</option>
+<option value="Arizona">Arizona</option>
+<option value="Arkansas">Arkansas</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="District of Columbia">District of Columbia</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Iowa">Iowa</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Maine">Maine</option>
+<option value="Maryland">Maryland</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Missouri">Missouri</option>
+<option value="Montana">Montana</option>
+<option value="Nebraska">Nebraska</option>
+<option value="Nevada">Nevada</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="New York">New York</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Vermont">Vermont</option>
+<option value="Virginia">Virginia</option>
+<option value="Washington">Washington</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="Wyoming">Wyoming</option></select>
+                    </div>
+
+                    <div class="col2 right fieldpadd" hidden="true">
+                      <p> Country </p>
+                      <select id="algofast_user_country" name="algofast_user[country]"><option value="USA">USA</option></select>
+                    </div>
+
+                    <div class="col2 right fieldpadd">
+                      <p> Zip Code </p>
+                      <input class="required" id="algofast_user_zipcode" maxlength="5" name="algofast_user[zipcode]" size="5" type="text" value="">
+                    </div>
+
+                    <div class="col1 left fieldpadd marginNone">
+                      <p> Phone Number </p>
+                      <input class="required" id="algofast_user_phone" maxlength="10" name="algofast_user[phone]" size="10" type="text" value="">
+                    </div>
+                  </div>
+
+                  <h6><br> Security Questions </h6>
+
+                  <div class="popfieldsSectionRow">
+                    <div class="col1 left fieldpadd">
+                        <select id="questions_" name="questions[]"><option value="What street does your best friend live on?">What street does your best friend live on?</option>
+<option value="What is your mother&#39;s maiden name?">What is your mother's maiden name?</option>
+<option value="What is your first crush name?">What is your first crush name?</option>
+<option value="What was your childhood nickname?">What was your childhood nickname?</option>
+<option value="What is the name of the place your wedding reception was held?">What is the name of the place your wedding reception was held?</option></select>
+                        <input class="required" id="ans_1" name="answers[]" type="text">
+                        <select id="questions_" name="questions[]"><option value="Who is your favorite Sports person?">Who is your favorite Sports person?</option>
+<option value="What is your favorite book?">What is your favorite book?</option>
+<option value="In what city or town was your first job?">In what city or town was your first job?</option>
+<option value="Who was your childhood hero?">Who was your childhood hero?</option>
+<option value="What was the first concert you attended?">What was the first concert you attended?</option></select>
+                        <input class="required" id="ans_2" name="answers[]" type="text">
+                        <select id="questions_" name="questions[]"><option value="What was the name of your elementary / primary school?">What was the name of your elementary / primary school?</option>
+<option value="Which song you often sing most?">Which song you often sing most?</option>
+<option value="What month and day is your anniversary?">What month and day is your anniversary?</option>
+<option value="What is your pet&#39;s name?">What is your pet's name?</option>
+<option value="What year did you graduate from High School?">What year did you graduate from High School?</option></select>
+                        <input class="required" id="ans_3" name="answers[]" type="text">
+                    </div>
+                  </div>
+
+                  <h6><br> Agreements </h6>
+                  <div class="popfieldsSectionRow">
+                    <div class="popTablerow">
+                      <div id="aggMasterData" class="popfieldsSectionRow"><div class="popTablerow"><div class="left text-left popTablesubhead">Agreement</div><div class="right text-right popTablesubhead">Agree</div></div><div class="popTablerow"><div class="left text-left">1.   <a alt="Agreement" target="_blank" onclick="openAgreementPopup(2)"> Algofast Agreement </a></div><div class="right text-right"><input type="checkbox" id="agg_2" value="2" name="prdAgg[]" class="er"><label for="agg_2"><div></div></label></div></div></div>
+                      <div id="error_explanation2" class="errorAgreements"></div>
+                      <div class="col1 left margintop20 fieldpadd">
+                        <p> Please enter your name to Sign  </p>
+                        <input id="agUserSignature" name="agUserSignature" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col1 left fieldpadd">
+                    <script type="text/javascript" src="./AlgoFast_files/challenge"></script><script type="text/javascript" src="./AlgoFast_files/recaptcha.js"></script><div id="recaptcha_widget_div" style="" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table id="recaptcha_table" class="recaptchatable recaptcha_theme_red"> <tbody><tr> <td colspan="6" class="recaptcha_r1_c1"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td colspan="4" class="recaptcha_image_cell"><center><div id="recaptcha_image" style="width: 300px; height: 57px;"><img id="recaptcha_challenge_image" alt="reCAPTCHA challenge image" height="57" width="300" src="./AlgoFast_files/image"></div></center></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td rowspan="6" class="recaptcha_r3_c1"></td> <td colspan="4" class="recaptcha_r3_c2"></td> <td rowspan="6" class="recaptcha_r3_c3"></td> </tr> <tr> <td rowspan="3" class="recaptcha_r4_c1" height="49"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none;"><input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="03AHJ_VuvETZp2GzF2X4xmOr_dWCi94kwyz-mst3e0a99hr57UkSF7x4hbXND6QRp9gAK8AS8Jwsp-lX-I-6xgfmkQ6suIrU-2EfOSpiE_UssANJ5TljZoboe3Y7iVfhOB07R3y011QQgC_6xYcMOen7ucVJxxUT1sHJZ-p5zajhritDuhw0Q1XY3VC-YKYSAid_g6tkya9TA14yF0vH8FUbn9-ZCb3x1yocsRvdYfq8N8dj1q2WN_2Kgt0zRcbi4SsFO85fTHTa_Z"></span><input name="recaptcha_response_field" id="recaptcha_response_field" type="text" autocorrect="off" autocapitalize="off" placeholder="Type the text" autocomplete="off"> <span id="recaptcha_privacy" class="recaptcha_only_if_privacy"><a href="http://www.google.com/intl/en/policies/" target="_blank">Privacy &amp; Terms</a></span> </div> </td> <td rowspan="4" class="recaptcha_r4_c2"></td> <td><a id="recaptcha_reload_btn" title="Get a new challenge"><img id="recaptcha_reload" width="25" height="17" src="./AlgoFast_files/refresh.gif" alt="Get a new challenge"></a></td> <td rowspan="4" class="recaptcha_r4_c4"></td> </tr> <tr> <td><a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" title="Get an audio challenge"><img id="recaptcha_switch_audio" width="25" height="16" alt="Get an audio challenge" src="./AlgoFast_files/audio.gif"></a><a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" title="Get a visual challenge"><img id="recaptcha_switch_img" width="25" height="16" alt="Get a visual challenge" src="./AlgoFast_files/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Help"><img id="recaptcha_whatsthis" width="25" height="16" src="./AlgoFast_files/help.gif" alt="Help"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div>
+<noscript>
+  &lt;iframe src="//www.google.com/recaptcha/api/noscript?k=6LcwIMkSAAAAAJd0uuRq343n-6QIs2E49yeeg91t" height="300" width="500" style="border:none;"&gt;&lt;/iframe&gt;&lt;br/&gt;
+  &lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;
+  &lt;input type="hidden" name="recaptcha_response_field" value="manual_challenge"/&gt;</noscript>
+
+                  </div>
+                </div>
+                <div class="Questions_footerSection">
+                  <div class="sendEmailWrap sendEmailBack">
+                    <input class="button right" id="submit_userreg" name="commit" type="submit" value="Create Account">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form></div>
+</div><iframe src="about:blank" style="height: 0px; width: 0px; visibility: hidden; border: none;">This frame prevents back/forward cache problems in Safari.</iframe>
+<div class="footerWrap">
+  <div class="containerInner">
+    <div class="column footercolum">
+      <h6>Contact Us</h6>
+      <ul>
+        <li class="f_contact icon-footer-mail">
+          <a href="mailto:contact@algofast.com?subject=Query%20From%20Website">contact@algofast.com</a>
+        </li>
+        <li class="f_contact icon-footer-phone">
+          (312) 347-4806
+        </li>
+      </ul>
+    </div>
+    <div class="column footercolum">
+      <h6>Follow Us</h6>
+      <ul>
+        <li class="f_contact icon-footer-facebook">
+          <a href="https://facebook.com/algofast">Facebook</a>
+        </li>
+        <li class="f_contact icon-footer-twitter">
+          <a href="https://twitter.com/algofast">Twitter</a>
+        </li>
+        <li class="f_contact icon-footer-linkedin">
+          <a href="https://linkedin.com/company/algofast">Linkedin</a>
+        </li>
+        <li class="f_contact icon-footer-youtube">
+          <a href="http://www.youtube.com/user/AlgoFast">Youtube</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column footercolum">
+      <h6>Join</h6>
+      <ul>
+        <li class="f_contact icon-footer-join">
+          <a href="http://localhost:3000/algofast_users/sign_up#">Join the AlgoFast Email List</a>
+        </li>
+        <li class="f_contact" style="padding-top:20px;">
+          algofast.com  © copyright 2014
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+function resetForm(id) {
+  validator.resetForm();
+}
+</script>
+<script>
+$(document).ready(function() {
+  GetNewsSourceAgreements();
+
+});
+</script>
+<script type="text/javascript">
+$("#submit_userreg").click(function() {
+  validateFirstPage();
+  validateSecondPage();
+});
+</script>
+<style>
+#customize_recaptcha .recaptcha_input_area input {
+  position: static !important;
+}
+#customize_recaptcha #recaptcha_table td {
+  width: none;
+}
+
+.recaptcha_r1_c1 {
+  display: none;
+}
+
+.recaptchatable .recaptcha_r1_c1 {
+  background: none !important;
+}
+
+.recaptchatable .recaptcha_r2_c1 {
+  background: none !important;
+  display: none;
+}
+
+.recaptchatable .recaptcha_r2_c2 {
+  background: none !important;
+  display: none;
+}
+
+.recaptchatable .recaptcha_r3_c1 {
+  background: none !important;
+  display: none;
+}
+
+.recaptchatable .recaptcha_r3_c2 {
+  background: none !important;
+  display: none;
+}
+
+.recaptchatable .recaptcha_r3_c3 {
+  background: none !important;
+  display: none;
+}
+
+.recaptchatable .recaptcha_r4_c4 {
+  background: none !important;
+  display: none !important;
+}
+
+.recaptchatable .recaptcha_r4_c2 {
+  background: none !important;
+  display: none !important;
+}
+
+.recaptcha_only_if_privacy {
+  display: none;
+}
+
+.recaptchatable .recaptcha_r4_c1 {
+  background: none !important;
+}
+
+.recaptchatable .recaptcha_r7_c1 {
+  background: none !important;
+  display: none;
+}
+
+.recaptchatable .recaptcha_r8_c1 {
+  background: none !important;
+  display: none;
+}
+
+#recaptcha_image {
+  padding: 10px;
+  float: left;
+  height: 72px !important;
+}
+
+#recaptcha_area, #recaptcha_table {
+  width: 100% !important
+}
+
+.recaptcha_input_area {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  height: 45px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  position: absolute !important;
+  width: 25.8% !important;
+  margin-top: -15px;
+}
+
+.recaptchatable #recaptcha_response_field {
+  width: 100% !important;
+  padding: 8px !important;
+}
+
+#recaptcha_reload_btn img {
+  left: 145px;
+  margin-top: -63px;
+  position: relative !important;
+  top: -64px;
+}
+
+#recaptcha_switch_audio_btn img {
+  left: 145px;
+  margin-top: -68px;
+  position: relative !important;
+  top: -60px;
+}
+
+#recaptcha_whatsthis_btn img {
+  left: 145px;
+  margin-top: -68px;
+  position: relative !important;
+  top: -56px;
+}
+
+.recaptcha_image_cell {
+  border: 1px solid #f5f5f5 !important;
+  background: #fafafa !important;
+}
+
+#customize_recaptcha .recaptcha_input_area input {
+  margin-top: -7px !important;
+  position: relative !important;
+  padding-left: 10px !important;
+}
+
+.recaptcha_theme_red #recaptcha_response_field {
+  border: 1px solid #CCCCCC !important;
+}
+
+.recaptcha_r4_c1 label {
+  margin-top: -54px !important;
+}
+
+.recaptcha_input_area .error {
+  margin-top: -61px !important;
+}
+.errorAgreements {
+  font-size: 11px;
+  color: #ff0000;
+  text-align: right;
+}
+</style>
+
+
+
+  
+
+</body></html>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  submitted_roll_call: false
+  roll_call: MyText
+  stayed_clean: false
+  date: 2014-03-09
+
+two:
+  submitted_roll_call: false
+  roll_call: MyText
+  stayed_clean: false
+  date: 2014-03-09

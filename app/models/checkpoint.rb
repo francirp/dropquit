@@ -1,0 +1,3 @@
+class Checkpoint < Post
+
+end

@@ -11,6 +11,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
+gem 'devise'
+gem 'figaro'
+gem 'simple_form'
+gem 'slim'
 
 group :doc do
   gem 'sdoc', require: false
@@ -20,16 +24,3 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
-
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

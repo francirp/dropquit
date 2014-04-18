@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  length: 1
+  start_date: 2014-03-09
+  substance: MyString
+  investment: 1.5
+
+two:
+  user_id: 1
+  length: 1
+  start_date: 2014-03-09
+  substance: MyString
+  investment: 1.5

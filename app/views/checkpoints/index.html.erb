@@ -1,0 +1,33 @@
+<h1>Listing checkpoints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Submitted roll call</th>
+      <th>Roll call</th>
+      <th>Stayed clean</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checkpoints.each do |checkpoint| %>
+      <tr>
+        <td><%= checkpoint.submitted_roll_call %></td>
+        <td><%= checkpoint.roll_call %></td>
+        <td><%= checkpoint.stayed_clean %></td>
+        <td><%= checkpoint.date %></td>
+        <td><%= link_to 'Show', checkpoint %></td>
+        <td><%= link_to 'Edit', edit_checkpoint_path(checkpoint) %></td>
+        <td><%= link_to 'Destroy', checkpoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checkpoint', new_checkpoint_path %>

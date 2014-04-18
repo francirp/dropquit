@@ -1,0 +1,3 @@
+class Introduction < Post
+
+end

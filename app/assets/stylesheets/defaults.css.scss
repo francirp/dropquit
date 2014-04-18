@@ -3,7 +3,7 @@
 html{ background-color:$base-background; }
 
 body{ @extend .fontfamily-base; color:$dark-grey; background-color:$base-background; height: 100%;}
-
+.pages_layout { padding-bottom: 150px; background-color: $white; }
 ol, ul { margin:0; }
 
 [class^="icon-"], [class*=" icon-"] { background-image:none; }

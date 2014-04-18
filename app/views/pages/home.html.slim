@@ -1,0 +1,65 @@
+.pages_layout
+  .home
+    section.main_img
+      .row
+        .small-10.small-centered.columns
+        h1 Dropkick your addiction
+        tion
+    section.addiction
+      .row
+        ul
+          li
+            h2 Addiction Is Paralyzing
+            p It pins you down and whispers into your ear that you can’t get up. While you lie there helpless, it slowly takes your life away. Mocking you as you cry from within.
+          li
+            h2 Stand Up.
+            p Everyone that built this app has been exactly where you are. We built this app to get you off of that mat. We built this app to save your life. Put your faith in us, and we will see you through this.
+    section.steps_to_success
+      .row
+        h1.headline Three Critical Components
+      .row
+        ul.critical_components
+          li
+            i.fa.fa-usd
+            h3.heading Skin In The Game
+            p Simply saying to yourself, “I am done for good” is nothing more than you talking to yourself. You need to physically invest in quitting. To use DropQuit, you must bet $20 or more per week on your quit. For each week that you stay solid, you will earn points that can be redeemed for real stuff.
+          li
+            i.fa.fa-group
+            h3.heading Accountability
+            p You need an accountability partner to keep you honest. Every week, your partner will verify that you've stayed true to your goal. Should you fail to stay clean for a given week, your accountability partner will reap the benefits by receiving a portion of your weekly commitment.
+          li
+            i.fa.fa-microphone
+            h3.heading Daily Roll Call
+            p The last step is Daily Roll call. To replace one bad habit, we must form an opposing good one. Every day, you will make an oath to the DropQuit community that you will not use any form of tobacco that day. This is the lifeblood of your quit and is required to complete the program.
+      = form_tag(new_user_registration_path, method: 'get') do
+        .row
+          ul.critical_components_form
+            li
+              .row
+                .small-10.large-10.large-centered.columns
+                  .row.collapse
+                    .small-2.large-2.columns
+                      span.prefix $
+                    .small-4.large-4.columns
+                      = text_field_tag :amount, nil, placeholder: "20.00"
+                    .small-6.large-6.columns
+                      span.postfix per week
+            li
+              = select_tag :group, options_for_select(group_options)
+            li
+              = text_area_tag :roll_call, "Day 1 of my quit and I will not use today."
+        .row
+          .large-6.large-centered.columns
+            = submit_tag "HELP ME QUIT", class: 'button large radius home_page_sign_up_btn'
+    section.fight_with_us
+      .row
+        .large-6.medium-8.small-12.medium-centered.large-centered.columns
+          ul
+            li
+              h1 Fight With Us.
+              p This is your life – take it back right now. Not tomorrow or next week. There is only one time to quit – it is right here, and right now. Get off the mat and start kicking the crap out of your addiction. It is your turn.
+            .row.collapse
+              .small-9.columns
+                input type="text" placeholder="Email"
+              .small-3.columns
+                = link_to "LET'S FIGHT", "#", class: "button postfix"

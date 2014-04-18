@@ -1,13 +1,13 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: payvalet_dev
+  database: dropquit_dev
   pool: 5
   host: localhost
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: payvalet_test
+  database: dropquit_test
   pool: 5
   host: localhost
