@@ -4,6 +4,7 @@ html{ background-color:$base-background; }
 
 body{ @extend .fontfamily-base; color:$dark-grey; background-color:$base-background; height: 100%;}
 .pages_layout { padding-bottom: 150px; background-color: $white; }
+.row { max-width: 1600px; }
 ol, ul { margin:0; }
 
 [class^="icon-"], [class*=" icon-"] { background-image:none; }
@@ -13,7 +14,6 @@ form{ margin:0; }
 hr{ border-color:$base-grey; border-bottom:none; }
 
 h1, h2, h3, h4, h5, h6 { font-family:'Open Sans', Helvetica, sans-serif; font-weight:700; }
-
 
 //SITE TYPOGRAPHY
 
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 { font-family:'Open Sans', Helvetica, sans-serif; font-we
 .item-bold{ @extend .fontfamily-heavy; font-size:$fontsize-base; }
 .footnote { @extend .fontfamily-base; font-size:$fontsize-small; }
 .large-body-text{ @extend .fontfamily-light; font-size:$fontsize-medium; }
-
+.blue-bold-text{ color:$base-blue; @extend .fontfamily-heavy; }
 .spinner-container{
   i { font-size:$fontsize-bigger; text-align:center; }
 }

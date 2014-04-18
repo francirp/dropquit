@@ -1,4 +1,19 @@
 .posts-index
-  ul.posts
-    - @posts.each do |post|
-      li = post.type
+  .row
+    .small-2.columns.sidebar
+      .avatar-area = image_tag "http://placehold.it/200x200", class: "avatar"
+      .name-area
+        .name Ryan Francis
+      section.points
+        .header Your Stats
+    .small-10.columns.main
+      ul.posts
+        - @posts.each do |date, posts|
+          .date-area
+            .date = date.strftime("%A %b %e, %Y")
+          .date-stats
+            h5 # Roll Calls Posted: 200
+            h5 # Roll Calls Failed: 210
+            h5 % Achievement: 95%
+          - posts.each do |post|
+            li = post.type

@@ -15,6 +15,10 @@ header{
     @include image-2x("logo_home.png", 156px, 50px);
   }
 
+  .sign-in-btn {
+    padding-bottom: 0;
+  }
+
 
   ul{padding: 12px 0;
     li{ display:inline;

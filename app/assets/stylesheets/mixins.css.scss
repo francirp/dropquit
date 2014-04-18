@@ -105,3 +105,10 @@
     -o-background-size: $value;
     background-size: $value;
 }
+
+/* -- FontAwesome ---------------------------------------------------------------*/
+@mixin fontIcon ($icon){
+  font-family: 'FontAwesome';
+  content: $icon;
+  margin-right: 10px;
+}

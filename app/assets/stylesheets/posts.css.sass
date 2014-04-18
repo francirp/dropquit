@@ -1,0 +1,36 @@
+.posts-index
+  .columns
+    padding: 0px
+  .sidebar
+    padding: 1em
+    border-right: thin solid $dark-grey
+    .avatar-area
+      text-align: center
+      .avatar
+        border: 2px solid $base-white
+        height: 200px
+        @include borderRadius(100px)
+    .name-area
+      margin-top: 0.5em
+      .name
+        text-align: center
+        @extend .fontfamily-medium
+        font-size: $fontsize-huge
+    section.points
+      margin-top: 50px
+      .header
+        @extend .blue-bold-text
+        font-size: $fontsize-big
+        &:before
+          @include fontIcon("\f080")
+    .day
+      @extend .fontfamily-light
+      font-size: $fontsize-medium
+  .main
+    background-color: $white
+    .date-area
+      padding: 0em 1em
+      border-bottom: thin solid $dark-grey
+      .date
+        @extend .fontfamily-medium
+        font-size: $fontsize-huge
