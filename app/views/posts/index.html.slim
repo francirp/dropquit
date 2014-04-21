@@ -1,19 +1,55 @@
-.posts-index
-  .row
-    .small-2.columns.sidebar
-      .avatar-area = image_tag "http://placehold.it/200x200", class: "avatar"
+.row.page-area.posts-index
+  .small-2.columns.sidebar
+    .profile
+      = image_tag "http://placehold.it/300x300", class: "avatar"
       .name-area
         .name Ryan Francis
-      section.points
-        .header Your Stats
-    .small-10.columns.main
-      ul.posts
-        - @posts.each do |date, posts|
-          .date-area
-            .date = date.strftime("%A %b %e, %Y")
-          .date-stats
-            h5 # Roll Calls Posted: 200
-            h5 # Roll Calls Failed: 210
-            h5 % Achievement: 95%
-          - posts.each do |post|
-            li = post.type
+        .days 30 Days Quit
+    section.points
+      .header Your Stats
+  .small-10.columns.main
+    - @posts.each do |date, posts|
+      .row.date-area
+        .date = date.strftime("%A %b %e, %Y")
+      .row.navigation
+        ul
+          .small-3.columns
+            li.active Feed
+          .small-3.columns
+            = link_to '' do
+              li Roll Calls
+          .small-3.columns
+            = link_to '' do
+              li Introductions
+          .small-3.columns
+            = link_to '' do
+              li Discussion
+      .row.date-stats
+        .small-3.columns
+          .stat 200
+          .stat-text Roll Calls Posted
+        .small-3.columns
+          .stat 95%
+          .stat-text Achievement
+        .small-3.columns
+          .stat +5
+          .stat-text Group Members
+        .small-3.columns
+          .stat 4050
+          .stat-text Days of Freedom Earned
+      .row.posts
+        - posts.each do |post|
+          .row.post
+            .small-3.medium-2.columns.avatar-area
+              = image_tag "http://placehold.it/200x200", class: "avatar"
+            .small-9.medium-10.columns.main-post-area
+              .row.header
+                .small-4.columns
+                  .name Ryan Francis
+                  .day Day 10
+                .small-2.small-offset-6.columns
+                  .time = "#{time_ago_in_words(post.created_at)} ago"
+              .row.content-area
+                .small-12.columns
+                  .content I am going to stay strong as hell today!
+

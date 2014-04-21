@@ -1,36 +1,96 @@
 .posts-index
   .columns
     padding: 0px
+  .row
+    margin: 0px
+    padding: 0px
   .sidebar
     padding: 1em
     border-right: thin solid $dark-grey
-    .avatar-area
+    min-height: 1000px
+    background-color: $light-grey
+    .profile
       text-align: center
+      border-bottom: thin solid $light-grey
+      padding-bottom: 10px
       .avatar
-        border: 2px solid $base-white
-        height: 200px
-        @include borderRadius(100px)
-    .name-area
-      margin-top: 0.5em
-      .name
-        text-align: center
-        @extend .fontfamily-medium
-        font-size: $fontsize-huge
+        height: 100px
+        @include borderRadius(50px)
+        border: 3px solid $white
+      .name-area
+        margin-top: 0.5em
+        .name
+          text-align: center
+          @extend .fontfamily-medium
+          font-size: $fontsize-big
+        .days
+          margin-top: 0.5em
+          font-size: $fontsize-small
+          @extend .fontfamily-light
     section.points
       margin-top: 50px
       .header
         @extend .blue-bold-text
-        font-size: $fontsize-big
+        font-size: $fontsize-medium
         &:before
           @include fontIcon("\f080")
     .day
       @extend .fontfamily-light
       font-size: $fontsize-medium
   .main
-    background-color: $white
     .date-area
-      padding: 0em 1em
+      text-align: center
+      padding: 0.4em 0 0.4em 0
+      background-color: $light-orange
       border-bottom: thin solid $dark-grey
       .date
         @extend .fontfamily-medium
-        font-size: $fontsize-huge
+        font-size: $fontsize-medium
+    .navigation
+      padding: 0
+      font-size: $fontsize-big
+      @extend .fontfamily-medium
+      text-align: center
+      li
+        padding: 0.3em 0em
+        border: thin solid $dark-grey
+        border-top: none
+        &:first-child
+          border-left: none
+        &.active
+          background-color: $base-grey
+    .date-stats
+      padding: 1.5em 2em
+      border-top: thin solid $light-grey
+      border-bottom: thin solid $base-grey
+      .stat
+        font-size: $fontsize-big
+        @extend .fontfamily-heavy
+        color: $dark-green
+      .stat-text
+        margin-top: 0.5em
+    .posts
+      .post
+        padding: 1em
+        border-bottom: thin solid $light-grey
+        border-top: thin solid $light-grey
+        .avatar-area
+          padding-right: 1em
+          .avatar
+            height: 80px
+            @include borderRadius(5px)
+            float: right
+        .main-post-area
+          padding-left: 1em
+          .header
+            .name
+              @extend .fontfamily-medium
+              font-size: $fontsize-big
+            .day
+              display: inline
+              padding: 10px 0px
+              font-size: $fontsize-small
+              color: $base-grey
+              @extend .fontfamily-medium
+          .content-area
+            padding-top: 0.8em

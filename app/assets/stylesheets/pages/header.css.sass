@@ -1,0 +1,29 @@
+body.application
+  header
+    background-color: $darkest-blue
+    border-bottom: 1px solid $darkest-blue
+    float: left
+    height: $navbar-offset
+    @include boxShadow(1px 0 5px, rgba(0,0,0,0.5))
+    @include linearGradient(180deg, $navigation-blue, $base-blue)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$navigation-blue', endColorstr='$base-blue')
+    overflow: hidden
+    position: fixed
+    width: 100%
+    z-index: 1001
+    .logo
+      line-height: $navbar-offset - 5px
+      a.dropquit
+        color: $white
+        @extend .fontfamily-medium
+        font-size: $fontsize-big
+    .right-buttons
+      text-align: right
+      padding: 0px
+      li
+        font-size: $fontsize-huge
+      a.sign-out-link
+        padding: 5px 20px 5px 20px
+        color: $white
+        font-size: $fontsize-huge
+        border-left: thin solid $base-grey
