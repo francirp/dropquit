@@ -7,5 +7,8 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300"
   body.application
-    = render 'layouts/application_header'
-    = yield
+    .off-canvas-wrap data-offcanvas=''
+      .inner-wrap
+        = render 'layouts/application_header'
+        = render 'layouts/offcanvas'
+        = yield

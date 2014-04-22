@@ -1,15 +1,13 @@
 //SITE WIDE STYLES
 
-html{ background-color: $base-background; }
 
-body{ @extend .fontfamily-base; color:$dark-grey; background-color:$base-background; height: 100%;}
+body{ @extend .fontfamily-base; color:$dark-grey; height: 100%;}
+// body.application { background-image: asset-url('tweed.png'); }
 .pages_layout { padding-bottom: 150px; background-color: $white; }
 .page-area { padding-top: $navbar-offset; overflow-y: scroll }
-.sidebar { position: fixed }
-body.application{
-  .row { max-width: 1600px; }
+.row {
+  max-width: 1600px;
 }
-
 ol, ul { margin:0; }
 
 [class^="icon-"], [class*=" icon-"] { background-image:none; }

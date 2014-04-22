@@ -1,0 +1,11 @@
+aside.left-off-canvas-menu
+  .profile
+    = image_tag "http://placehold.it/300x300", class: "avatar"
+    .name-area
+      .name Ryan Francis
+      .days 30 Days Quit
+  .navigation
+    .header Navigation
+    ul
+      = link_to edit_user_registration_path(current_user) do
+        li Settings

@@ -11,8 +11,16 @@ body.application
     position: fixed
     width: 100%
     z-index: 1001
-    .logo
+    a.left-off-canvas-toggle
+      margin-left: -15px
+      padding: 5px 20px 10px 20px
       line-height: $navbar-offset - 5px
+      color: $white
+      font-size: $fontsize-big
+      border-right: thin solid black
+    .logo
+      text-align: center
+      line-height: $navbar-offset
       a.dropquit
         color: $white
         @extend .fontfamily-medium
@@ -26,4 +34,37 @@ body.application
         padding: 5px 20px 5px 20px
         color: $white
         font-size: $fontsize-huge
-        border-left: thin solid $base-grey
+        border-left: thin solid black
+  aside.left-off-canvas-menu
+    background-color: $light-grey
+    .profile
+      color: $white
+      background-color: $darkest-blue
+      padding-top: 1em
+      text-align: center
+      border-bottom: thin solid $light-grey
+      padding-bottom: 1em
+      .avatar
+        height: 150px
+        @include borderRadius(75px)
+        border: 3px solid $white
+      .name-area
+        margin-top: 0.5em
+        .name
+          text-align: center
+          @extend .fontfamily-medium
+          font-size: $fontsize-big
+        .days
+          margin-top: 0.5em
+          font-size: $fontsize-small
+          @extend .fontfamily-light
+    .navigation
+      padding-left: 1em
+      margin-top: 50px
+      .header
+        font-size: $fontsize-big
+        margin-bottom: 1em
+        &:before
+          @include fontIcon("\f080")
+      li
+        padding-left: 10px

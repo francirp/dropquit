@@ -1,9 +1,12 @@
 header
   .row
-    .small-2.columns
+    .small-1.columns
+      a.left-off-canvas-toggle href="#"
+        i.fa.fa-bars
+    .small-2.small-offset-4.columns
       .logo
-        = link_to 'DropQuit', root_path(@root), class: 'dropquit'
-    .small-3.small-offset-3.columns.right-buttons
+        = link_to 'DROPQUIT', root_path(@root), class: 'dropquit'
+    .small-2.columns.right-buttons
       ul
         = link_to destroy_user_session_path, method: :delete, class: 'sign-out-link' do
             i.fa.fa-sign-out
