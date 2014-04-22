@@ -1,23 +1,22 @@
-.small-10.columns.main
-  = render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
-  - @posts.each do |date, posts|
-    .row.date-area
-      .date = date.strftime("%A %b %e, %Y")
-    .row.posts
-      - posts.each do |post|
-        .row.post
-          .small-3.medium-2.large-1.columns.avatar-area
-            = image_tag "http://placehold.it/200x200", class: "avatar"
-          .small-9.medium-10.large-11.columns.main-post-area
-            .row.header
-              .small-3.columns
-                .name = post.user.handle
-                .day = "Day #{post.user.streak}"
-              .small-3.small-offset-1.columns
-                .type = post.type_text
-              .small-2.small-offset-1.columns
-                .time = "#{time_ago_in_words(post.created_at)} ago"
-            .row.content-area
-              .small-12.columns
-                .content = post.content
+= render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
+- @posts.each do |date, posts|
+  .row.date-area
+    .date = date.strftime("%A %b %e, %Y")
+  .row.posts
+    - posts.each do |post|
+      .row.post
+        .small-3.medium-2.large-1.columns.avatar-area
+          = image_tag "http://placehold.it/200x200", class: "avatar"
+        .small-9.medium-10.large-11.columns.main-post-area
+          .row.header
+            .small-3.columns
+              .name = post.user.handle
+              .day = "Day #{post.user.streak}"
+            .small-3.small-offset-1.columns
+              .type = post.type_text
+            .small-2.small-offset-1.columns
+              .time = "#{time_ago_in_words(post.created_at)} ago"
+          .row.content-area
+            .small-12.columns
+              .content = post.content
 

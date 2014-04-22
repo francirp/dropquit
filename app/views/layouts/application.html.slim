@@ -16,6 +16,7 @@ html
             = render 'layouts/notification_bar', notification_text: 'Start by adding your', notification_link_text: 'introduction', notification_link: new_introduction_path
           - elsif current_user.has_not_posted_roll_call_today?
             = render 'layouts/notification_bar', notification_text: 'Post your roll call for today', notification_link_text: 'here', notification_link: new_checkpoint_path
-          div class="row posts-#{action_name}"
+          div class="row #{controller_name}-#{action_name}"
             = render 'layouts/sidebar'
-            = yield
+            .small-10.columns.main
+              = yield
