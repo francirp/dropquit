@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+  belongs_to :user
+
   scope :todays_posts, ->(type) {Post.where(date: Date.today, type: type)}
 
   def checkpoint?

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :quits
   has_many :posts
+  has_many :checkpoints
 
   scope :todays_new_members, where("created_at>=? AND created_at<=?", DateTime.now.beginning_of_day, DateTime.now.end_of_day)
 
@@ -15,6 +16,10 @@ class User < ActiveRecord::Base
 
   def has_not_posted_roll_call_today?
     Checkpoint.user_daily_roll_call(self).blank?
+  end
+
+  def streak
+    checkpoints.count
   end
 
 end

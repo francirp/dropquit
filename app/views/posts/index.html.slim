@@ -24,13 +24,13 @@
         .row.posts
           - posts.each do |post|
             .row.post
-              .small-3.medium-2.columns.avatar-area
+              .small-3.medium-2.large-1.columns.avatar-area
                 = image_tag "http://placehold.it/200x200", class: "avatar"
-              .small-9.medium-10.columns.main-post-area
+              .small-9.medium-10.large-11.columns.main-post-area
                 .row.header
                   .small-3.columns
-                    .name Ryan Francis
-                    .day Day 10
+                    .name = post.user.handle
+                    .day = post.user.streak
                   .small-3.small-offset-1.columns
                     .type = post.type_text
                   .small-2.small-offset-1.columns
