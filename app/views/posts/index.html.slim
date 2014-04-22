@@ -12,6 +12,10 @@
               = array[1]
         = link_to '#' do
           li Discussion
+        = link_to '#' do
+          li Chat
+        = link_to '#' do
+          li Members
     .small-10.columns.main
       = render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
       - @posts.each do |date, posts|
