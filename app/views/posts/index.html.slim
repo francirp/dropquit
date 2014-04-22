@@ -1,4 +1,6 @@
 .page-area
+  - if current_user.posts.blank?
+    = render 'layouts/notification_bar'
   .row.posts-index
     .small-2.columns.sidebar
       ul.navigation
