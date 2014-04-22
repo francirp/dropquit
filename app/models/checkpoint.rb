@@ -14,8 +14,8 @@ class Checkpoint < Post
     "#{rounded_percent}%"
   end
 
-  def content_label
-    "Roll Call Message"
+  def form_label
+    "Post Roll Call"
   end
 
   def self.count_days_freedom_earned
@@ -26,5 +26,8 @@ class Checkpoint < Post
     "Roll Call"
   end
 
+  def example
+    "Another day dip free. Hell yeah. Lets go kick Wednesday's ass!"
+  end
 
 end

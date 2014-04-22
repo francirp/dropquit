@@ -12,10 +12,6 @@ class Post < ActiveRecord::Base
     Post.where(date: Date.today).count
   end
 
-  def content_label
-    "Post Content"
-  end
-
   def type_text
     "Post"
   end

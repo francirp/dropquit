@@ -82,3 +82,25 @@
           .content-area
             padding-top: 0.8em
             line-height: 1.5em
+.post-form
+  .header-area
+    padding-top: 1em
+    padding-bottom: 1em
+    @extend .fontfamily-light
+    font-size: $fontsize-toobig
+    text-align: center
+  .example-area
+    border: thin solid $dark-grey
+    @include borderRadius(5px)
+    background-color: #E8F2FF
+    padding: 1em
+    .example-header
+      @extend .fontfamily-medium
+      font-size: $fontsize-big
+    .example-text
+      margin-top: 1em
+  .form-area
+    margin-top: 1.5em
+    textarea
+      height: 130px
+

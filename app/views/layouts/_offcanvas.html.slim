@@ -7,5 +7,7 @@ aside.left-off-canvas-menu
   .navigation
     .header Navigation
     ul
+      = link_to posts_path do
+        li Feed
       = link_to edit_user_registration_path(current_user) do
         li Settings

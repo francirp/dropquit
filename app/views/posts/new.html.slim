@@ -1,1 +1,9 @@
-= render 'form'
+.row.page-area.post-form
+  .small-10.medium-8.large-6.small-centered.columns
+    .row.header-area
+      .header = @post.form_label
+    .row.example-area
+      .example-header = "Example #{@post.type_text}"
+      .example-text = @post.example.html_safe
+    .row.form-area
+      = render 'form'
