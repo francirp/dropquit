@@ -9,8 +9,8 @@
   section.general-nav
     .header Navigation
     ul.navigation
-      = link_to '' do
-        li My Quit
+      = link_to edit_quit_path(current_user.quit) do
+        li class="#{'active' if controller_name == 'quits'}" My Quit
       = link_to '#' do
         li Discussion
       = link_to '#' do

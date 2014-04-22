@@ -15,6 +15,7 @@ gem 'devise'
 gem 'figaro'
 gem 'simple_form'
 gem 'slim'
+gem 'workflow'
 
 group :doc do
   gem 'sdoc', require: false

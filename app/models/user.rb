@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
     checkpoints.count
   end
 
+  def quit
+    quits.last
+  end
+
 end
