@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418022151) do
+ActiveRecord::Schema.define(version: 20140421231032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "checkpoints", force: true do |t|
-    t.boolean  "submitted_roll_call"
-    t.text     "roll_call"
-    t.boolean  "stayed_clean"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"
@@ -31,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140418022151) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "stayed_clean"
   end
 
   create_table "quits", force: true do |t|

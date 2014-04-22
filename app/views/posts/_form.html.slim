@@ -1,0 +1,8 @@
+.row.page-area.posts-index
+  .small-10.small-centered.columns
+    = simple_form_for(@post) do |f|
+      = f.input :date, as: :hidden
+      = f.input :type, as: :hidden
+      = f.input :stayed_clean if @post.checkpoint?
+      = f.input :content, label: @post.content_label
+      = f.submit

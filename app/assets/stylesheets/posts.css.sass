@@ -9,31 +9,41 @@
     border-right: thin solid $dark-grey
     min-height: 1000px
     background-color: $light-grey
-    .profile
-      text-align: center
-      border-bottom: thin solid $light-grey
-      padding-bottom: 10px
-      .avatar
-        height: 100px
-        @include borderRadius(50px)
-        border: 3px solid $white
-      .name-area
-        margin-top: 0.5em
-        .name
-          text-align: center
-          @extend .fontfamily-medium
-          font-size: $fontsize-big
-        .days
-          margin-top: 0.5em
-          font-size: $fontsize-small
-          @extend .fontfamily-light
-    section.points
-      margin-top: 50px
-      .header
-        @extend .blue-bold-text
+    ul.navigation
+      li
+        @extend .fontfamily-light
         font-size: $fontsize-medium
-        &:before
-          @include fontIcon("\f080")
+        margin-top: 0.7em
+        &.active
+          @extend .fontfamily-medium
+          &:after
+            @include fontIcon("\f178")
+            float: right
+    // .profile
+    //   text-align: center
+    //   border-bottom: thin solid $light-grey
+    //   padding-bottom: 10px
+    //   .avatar
+    //     height: 100px
+    //     @include borderRadius(50px)
+    //     border: 3px solid $white
+    //   .name-area
+    //     margin-top: 0.5em
+    //     .name
+    //       text-align: center
+    //       @extend .fontfamily-medium
+    //       font-size: $fontsize-big
+    //     .days
+    //       margin-top: 0.5em
+    //       font-size: $fontsize-small
+    //       @extend .fontfamily-light
+    // section.points
+    //   margin-top: 50px
+    //   .header
+    //     @extend .blue-bold-text
+    //     font-size: $fontsize-medium
+    //     &:before
+    //       @include fontIcon("\f196")
     .day
       @extend .fontfamily-light
       font-size: $fontsize-medium

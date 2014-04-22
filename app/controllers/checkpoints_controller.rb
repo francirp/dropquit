@@ -69,6 +69,7 @@ class CheckpointsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checkpoint_params
-      params.require(:checkpoint).permit(:submitted_roll_call, :roll_call, :stayed_clean, :date)
+      params.require(post_type.underscore.to_sym).permit(:submitted_roll_call, :roll_call, :stayed_clean, :date)
     end
+
 end

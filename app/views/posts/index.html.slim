@@ -1,29 +1,22 @@
 .row.page-area.posts-index
   .small-2.columns.sidebar
-    .profile
-      = image_tag "http://placehold.it/300x300", class: "avatar"
-      .name-area
-        .name Ryan Francis
-        .days 30 Days Quit
-    section.points
-      .header Your Stats
+    ul.navigation
+      - [['Post','Feed'],['Checkpoint','Roll Calls'],['Introduction','Introductions']].each do |array|
+        = link_to sti_post_path(array[0]) do
+          li class="#{'active' if @post_type == array[0]}"
+            = array[1]
+    / .profile
+    /   = image_tag "http://placehold.it/300x300", class: "avatar"
+    /   .name-area
+    /     .name Ryan Francis
+    /     .days 30 Days Quit
+    / section.points
+    /   .header = link_to 'Post Roll Call', sti_post_path('Checkpoint', @post, "new")
+    /   .header = link_to 'Post Introduction', sti_post_path('Introduction', @post, "new")
   .small-10.columns.main
     - @posts.each do |date, posts|
       .row.date-area
         .date = date.strftime("%A %b %e, %Y")
-      .row.navigation
-        ul
-          .small-3.columns
-            li.active Feed
-          .small-3.columns
-            = link_to '' do
-              li Roll Calls
-          .small-3.columns
-            = link_to '' do
-              li Introductions
-          .small-3.columns
-            = link_to '' do
-              li Discussion
       .row.date-stats
         .small-3.columns
           .stat 200
@@ -51,5 +44,5 @@
                   .time = "#{time_ago_in_words(post.created_at)} ago"
               .row.content-area
                 .small-12.columns
-                  .content I am going to stay strong as hell today!
+                  .content = post.content
 
