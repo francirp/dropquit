@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  layout "registrations"
+  layout "application", only: [:edit]
   def new
     pull_lead
     super

@@ -1,0 +1,19 @@
+.small-2.columns.sidebar
+  section.feed
+    .header FEED
+    ul.navigation
+      - [['Post','All'],['Checkpoint','Roll Calls'],['Introduction','Introductions']].each do |array|
+        = link_to sti_post_path(array[0]) do
+          li class="#{'active' if @post_type == array[0]}"
+            = array[1]
+  section.general-nav
+    .header Navigation
+    ul.navigation
+      = link_to '' do
+        li My Quit
+      = link_to '#' do
+        li Discussion
+      = link_to '#' do
+        li Chat
+      = link_to '#' do
+        li Members

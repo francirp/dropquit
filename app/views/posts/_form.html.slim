@@ -1,6 +1,6 @@
 = simple_form_for(@post) do |f|
   = f.input :date, as: :hidden
   = f.input :type, as: :hidden
-  = f.input :stayed_clean if @post.checkpoint?
+  = f.input :stayed_clean, label: "Stayed Clean Yesterday" if @post.checkpoint?
   = f.input :content, label: false, placeholder: "#{@post.form_label}..."
-  = f.submit
+  = f.submit "Post #{@post.type_text}", class: 'button large radius'

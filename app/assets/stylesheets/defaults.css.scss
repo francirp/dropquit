@@ -10,6 +10,17 @@ body.registration {
   background-image: asset-url('green_dust_scratch.png');
 }
 
+.main {
+  padding: 0px;
+  .columns{
+    padding: 0px;
+  }
+  .row{
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
 
 ol, ul { margin:0; }
 

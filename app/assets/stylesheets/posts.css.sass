@@ -1,29 +1,7 @@
 .posts-index
-  .columns
-    padding: 0px
-  .row
-    margin: 0px
-    padding: 0px
-  .sidebar
-    padding: 1em
-    border-right: thin solid $base-grey
-    border-left: thin solid $dark-grey
-    min-height: 1000px
-    background-color: $light-grey
-    ul.navigation
-      li
-        @extend .fontfamily-light
-        font-size: $fontsize-base
-        margin-top: 0.7em
-        &.active
-          @extend .fontfamily-medium
-          &:after
-            @include fontIcon("\f178")
-            float: right
-
-    .day
-      @extend .fontfamily-light
-      font-size: $fontsize-medium
+  .day
+    @extend .fontfamily-light
+    font-size: $fontsize-medium
   .main
     border-right: thin solid $dark-grey
     min-height: 1000px
@@ -103,4 +81,7 @@
     margin-top: 1.5em
     textarea
       height: 130px
+    .boolean
+      font-size: $fontsize-medium
+      margin-right: 0.5em
 

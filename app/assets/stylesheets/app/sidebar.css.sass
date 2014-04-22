@@ -1,0 +1,28 @@
+.sidebar
+  padding: 1em
+  border-right: thin solid $base-grey
+  border-left: thin solid $dark-grey
+  min-height: 1000px
+  background-color: $light-grey
+  .header
+    font-size: $fontsize-big
+    margin-bottom: 1em
+  ul.navigation
+    li
+      @extend .fontfamily-light
+      font-size: $fontsize-base
+      margin-top: 0.7em
+      &.active
+        @extend .fontfamily-medium
+        &:after
+          @include fontIcon("\f178")
+          float: right
+  section.feed
+    .header
+      &:before
+        @include fontIcon("\f0c9")
+  section.general-nav
+    margin-top: 50px
+    .header
+      &:before
+        @include fontIcon("\f14e")

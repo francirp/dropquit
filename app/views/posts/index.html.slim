@@ -1,41 +1,23 @@
-.page-area
-  - if current_user.posts.blank?
-    = render 'layouts/notification_bar', notification_text: 'Start by adding your', notification_link_text: 'introduction', notification_link: new_introduction_path
-  - elsif current_user.has_not_posted_roll_call_today?
-    = render 'layouts/notification_bar', notification_text: 'Post your roll call for today', notification_link_text: 'here', notification_link: new_checkpoint_path
-  .row.posts-index
-    .small-2.columns.sidebar
-      ul.navigation
-        - [['Post','Feed'],['Checkpoint','Roll Calls'],['Introduction','Introductions']].each do |array|
-          = link_to sti_post_path(array[0]) do
-            li class="#{'active' if @post_type == array[0]}"
-              = array[1]
-        = link_to '#' do
-          li Discussion
-        = link_to '#' do
-          li Chat
-        = link_to '#' do
-          li Members
-    .small-10.columns.main
-      = render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
-      - @posts.each do |date, posts|
-        .row.date-area
-          .date = date.strftime("%A %b %e, %Y")
-        .row.posts
-          - posts.each do |post|
-            .row.post
-              .small-3.medium-2.large-1.columns.avatar-area
-                = image_tag "http://placehold.it/200x200", class: "avatar"
-              .small-9.medium-10.large-11.columns.main-post-area
-                .row.header
-                  .small-3.columns
-                    .name = post.user.handle
-                    .day = "Day #{post.user.streak}"
-                  .small-3.small-offset-1.columns
-                    .type = post.type_text
-                  .small-2.small-offset-1.columns
-                    .time = "#{time_ago_in_words(post.created_at)} ago"
-                .row.content-area
-                  .small-12.columns
-                    .content = post.content
+.small-10.columns.main
+  = render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
+  - @posts.each do |date, posts|
+    .row.date-area
+      .date = date.strftime("%A %b %e, %Y")
+    .row.posts
+      - posts.each do |post|
+        .row.post
+          .small-3.medium-2.large-1.columns.avatar-area
+            = image_tag "http://placehold.it/200x200", class: "avatar"
+          .small-9.medium-10.large-11.columns.main-post-area
+            .row.header
+              .small-3.columns
+                .name = post.user.handle
+                .day = "Day #{post.user.streak}"
+              .small-3.small-offset-1.columns
+                .type = post.type_text
+              .small-2.small-offset-1.columns
+                .time = "#{time_ago_in_words(post.created_at)} ago"
+            .row.content-area
+              .small-12.columns
+                .content = post.content
 

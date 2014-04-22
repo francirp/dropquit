@@ -5,10 +5,17 @@ html
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300"
+    - stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300"
   body.application
     .off-canvas-wrap data-offcanvas=''
       .inner-wrap
         = render 'layouts/application_header'
         = render 'layouts/offcanvas'
-        = yield
+        .page-area
+          - if current_user.posts.blank?
+            = render 'layouts/notification_bar', notification_text: 'Start by adding your', notification_link_text: 'introduction', notification_link: new_introduction_path
+          - elsif current_user.has_not_posted_roll_call_today?
+            = render 'layouts/notification_bar', notification_text: 'Post your roll call for today', notification_link_text: 'here', notification_link: new_checkpoint_path
+          div class="row posts-#{action_name}"
+            = render 'layouts/sidebar'
+            = yield
