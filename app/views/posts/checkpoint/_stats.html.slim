@@ -1,0 +1,16 @@
+.row.date-stats
+  .row
+    .header Today's Roll Call Statistics
+  .row
+    .small-3.columns
+      .stat = Checkpoint.count_today
+      .stat-text = "#{@post_type.constantize.new.type_text}s"
+    .small-3.columns
+      .stat 95%
+      .stat-text Achievement
+    .small-3.columns
+      .stat +5
+      .stat-text Group Members
+    .small-3.columns
+      .stat 4050
+      .stat-text Days of Freedom Earned

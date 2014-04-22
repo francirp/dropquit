@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = post_class.all.group_by(&:date)
+    @posts = post_class.all.order("created_at DESC").group_by(&:date)
     @post = post_class.new
   end
 

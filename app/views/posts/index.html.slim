@@ -1,6 +1,8 @@
 .page-area
   - if current_user.posts.blank?
-    = render 'layouts/notification_bar'
+    = render 'layouts/notification_bar', notification_text: 'Start by adding your', notification_link_text: 'introduction', notification_link: new_introduction_path
+  - if current_user.has_not_posted_roll_call_today?
+    = render 'layouts/notification_bar', notification_text: 'Post your roll call for today', notification_link_text: 'here', notification_link: new_checkpoint_path
   .row.posts-index
     .small-2.columns.sidebar
       ul.navigation
@@ -11,23 +13,8 @@
         = link_to '#' do
           li Discussion
     .small-10.columns.main
+      = render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
       - @posts.each do |date, posts|
-        .row.date-stats
-          .row
-            .header Today's Stats
-          .row
-            .small-3.columns
-              .stat 200
-              .stat-text Roll Calls Posted
-            .small-3.columns
-              .stat 95%
-              .stat-text Achievement
-            .small-3.columns
-              .stat +5
-              .stat-text Group Members
-            .small-3.columns
-              .stat 4050
-              .stat-text Days of Freedom Earned
         .row.date-area
           .date = date.strftime("%A %b %e, %Y")
         .row.posts
@@ -37,10 +24,12 @@
                 = image_tag "http://placehold.it/200x200", class: "avatar"
               .small-9.medium-10.columns.main-post-area
                 .row.header
-                  .small-4.columns
+                  .small-3.columns
                     .name Ryan Francis
                     .day Day 10
-                  .small-2.small-offset-6.columns
+                  .small-3.small-offset-1.columns
+                    .type = post.type_text
+                  .small-2.small-offset-1.columns
                     .time = "#{time_ago_in_words(post.created_at)} ago"
                 .row.content-area
                   .small-12.columns

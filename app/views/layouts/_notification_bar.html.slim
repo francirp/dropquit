@@ -1,5 +1,5 @@
 .row.notification-bar
   .small-12.small-centered.columns
     .notification
-      | Start by adding your
-      =< link_to 'introduction', new_introduction_path
+      = notification_text
+      =< link_to notification_link_text, notification_link

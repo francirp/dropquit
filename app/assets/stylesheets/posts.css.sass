@@ -56,8 +56,7 @@
     .posts
       .post
         padding: 1em
-        border-bottom: thin solid $light-grey
-        border-top: thin solid $light-grey
+        border-bottom: thin solid $base-grey
         .avatar-area
           padding-right: 1em
           .avatar
@@ -70,6 +69,10 @@
             .name
               @extend .fontfamily-medium
               font-size: $fontsize-big
+            .type
+              text-align: center
+              @extend .fontfamily-light
+              font-size: $fontsize-big
             .day
               display: inline
               padding: 10px 0px
@@ -78,3 +81,4 @@
               @extend .fontfamily-medium
           .content-area
             padding-top: 0.8em
+            line-height: 1.5em
