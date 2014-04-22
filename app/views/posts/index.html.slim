@@ -1,7 +1,7 @@
 .page-area
   - if current_user.posts.blank?
     = render 'layouts/notification_bar', notification_text: 'Start by adding your', notification_link_text: 'introduction', notification_link: new_introduction_path
-  - if current_user.has_not_posted_roll_call_today?
+  - elsif current_user.has_not_posted_roll_call_today?
     = render 'layouts/notification_bar', notification_text: 'Post your roll call for today', notification_link_text: 'here', notification_link: new_checkpoint_path
   .row.posts-index
     .small-2.columns.sidebar
