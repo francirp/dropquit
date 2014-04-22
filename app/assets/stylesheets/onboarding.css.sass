@@ -1,5 +1,14 @@
 .new-user
-  .page-header
-    text-align: center
-  .header-area, .form-area
-    margin-top: 40px
+  .container
+    padding: 2em
+    background-color: $white
+    @include boxShadow
+    border: thin solid $dark-grey
+    margin-top: 150px
+    .page-header
+      text-align: center
+      margin: 0em 0em 1em 0em
+      line-height: 2.5em
+      .header-text
+        @extend .fontfamily-light
+        font-size: $fontsize-huge

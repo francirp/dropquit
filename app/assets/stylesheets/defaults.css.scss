@@ -5,9 +5,18 @@ body{ @extend .fontfamily-base; color:$dark-grey; height: 100%;}
 // body.application { background-image: asset-url('tweed.png'); }
 .pages_layout { padding-bottom: 150px; background-color: $white; }
 .page-area { padding-top: $navbar-offset; overflow-y: scroll }
-.row {
-  max-width: 1600px;
+
+body.application {
+  .row {
+    max-width: 1600px;
+  }
 }
+
+body.registration {
+  background-image: asset-url('tweed.png');
+}
+
+
 ol, ul { margin:0; }
 
 [class^="icon-"], [class*=" icon-"] { background-image:none; }
