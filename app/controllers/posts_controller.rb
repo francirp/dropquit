@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def index
     @posts = post_class.all.order("created_at DESC").group_by(&:date)
     @post = post_class.new
+    @page_title = "Latest Member Posts"
   end
 
   def create

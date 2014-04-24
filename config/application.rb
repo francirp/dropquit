@@ -21,3 +21,15 @@ module Dropquit
     # config.i18n.default_locale = :de
   end
 end
+
+Dropquit::Application.configure do
+  config.paperclip_defaults = {
+  :default_url => "missing_avatar.png",
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+end

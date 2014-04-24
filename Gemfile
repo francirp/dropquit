@@ -17,6 +17,8 @@ gem 'simple_form'
 gem 'slim'
 gem 'workflow'
 gem 'stripe'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :doc do
   gem 'sdoc', require: false

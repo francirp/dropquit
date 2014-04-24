@@ -11,6 +11,8 @@
     ul.navigation
       = link_to edit_quit_path(current_user.quit) do
         li class="#{'active' if controller_name == 'quits'}" My Quit
+      = link_to edit_user_registration_path do
+        li class="#{'active' if controller_name == 'registrations'}" My Profile
       = link_to '#' do
         li Discussion
       = link_to '#' do

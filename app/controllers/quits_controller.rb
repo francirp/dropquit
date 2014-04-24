@@ -41,6 +41,8 @@ class QuitsController < ApplicationController
   # PATCH/PUT /quits/1
   # PATCH/PUT /quits/1.json
   def update
+    token = params[:stripeToken]
+    raise token.inspect
     respond_to do |format|
       if @quit.update(quit_params)
         format.html { redirect_to @quit, notice: 'Quit was successfully updated.' }
