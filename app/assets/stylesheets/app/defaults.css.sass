@@ -1,6 +1,8 @@
 body.application
   .row
     max-width: 1600px
+  .page-padding
+    padding: 2em
   .notification-bar
     text-align: center
     background-color: $dark-red
@@ -13,3 +15,11 @@ body.application
     padding: 10px
     .link
       display: inline
+  .page-header
+    border-bottom: thin solid $light-grey
+    height: 4em
+    line-height: 4em
+    .header
+      margin-left: 1em
+      @extend .fontfamily-light
+      font-size: $fontsize-bigger

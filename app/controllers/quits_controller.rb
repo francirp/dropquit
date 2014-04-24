@@ -19,6 +19,7 @@ class QuitsController < ApplicationController
 
   # GET /quits/1/edit
   def edit
+    @page_title = @quit.pending_activation? ? "Start Your Quit" : "Update Your Quit"
   end
 
   # POST /quits

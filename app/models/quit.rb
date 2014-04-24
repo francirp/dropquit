@@ -12,13 +12,19 @@ class Quit < ActiveRecord::Base
     DEFAULT = 7
   end
 
+  FORMATTED_STATES = { pending_activation: 'Not Activated', active: 'Activated' }.with_indifferent_access
+
   workflow do
     state :pending_activation do
       event :activate, :transitions_to => :active
     end
     state :active do
-      event :fail, :transitions_to => :failed
       event :pause, :transition_to => :paused
     end
   end
+
+  def state
+    FORMATTED_STATES[workflow_state]
+  end
+
 end

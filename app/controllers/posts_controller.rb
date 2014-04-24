@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def new
     @post = post_class.new(date: Date.today)
+    @page_title = @post.form_label
   end
 
   def index
