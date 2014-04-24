@@ -1,0 +1,26 @@
+form#payment-form action="" method="POST"
+  span.payment-errors
+  .row.form-row
+    .small-6.columns
+      label
+        span Card Number
+      input type="text" size="20" data-stripe="number"
+  .row.form-row
+    .small-6.columns
+      .row
+        .small-4.columns
+          label
+            span CVC
+          input type="text" size="4" data-stripe="cvc"
+        .small-8.columns
+          .row.form-row
+            .small-12.columns
+              label
+                span Expiration (MM/YYYY)
+          .row
+            .small-4.columns
+              input type="text" size="2" data-stripe="exp-month"
+            .small-1.columns.slash
+              | /
+            .small-7.columns
+              input type="text" size="4" data-stripe="exp-year"

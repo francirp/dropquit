@@ -70,6 +70,6 @@ class QuitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quit_params
-      params.require(:quit).permit(:user_id, :length, :start_date, :substance, :investment)
+      params.require(:quit).permit(:user_id, :length, :start_date, :substance, :investment, :partner_email)
     end
 end
