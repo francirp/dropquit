@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def index
     @posts = post_class.all.order("created_at DESC").group_by(&:date)
     @post = post_class.new
-    @page_title = "Latest Member Posts"
+    @page_title = "Latest Member #{@post.type_text.pluralize}"
   end
 
   def create
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to send("#{post_type.underscore.pluralize}_path"), notice: "Successfully added."
+      redirect_to posts_path, notice: "Successfully added."
     else
       #do something
     end

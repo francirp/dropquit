@@ -5,17 +5,17 @@
   .row.posts
     - posts.each do |post|
       .row.post
-        .small-3.medium-2.large-1.columns.avatar-area
-          = image_tag "http://placehold.it/200x200", class: "avatar"
+        .small-3.medium-2.large-1.columns
+          .row.avatar-area
+            = image_tag post.user.avatar.url, class: "avatar"
         .small-9.medium-10.large-11.columns.main-post-area
           .row.header
-            .small-3.columns
-              .name = post.user.handle
-              .day = "Day #{post.user.streak}"
-            .small-3.small-offset-1.columns
-              .type = post.type_text
-            .small-2.small-offset-1.columns
-              .time = "#{time_ago_in_words(post.created_at)} ago"
+            .small-7.medium-4.large-3.columns
+              .name = link_to post.user.handle, user_registration_path(post.user)
+            .small-5.columns.right
+              .other-info
+                span class="type-#{post.type.downcase}" = post.type_text
+                span = " - #{time_ago_in_words(post.created_at)} ago"
           .row.content-area
             .small-12.columns
-              .content = post.content
+              .content = simple_format(post.content)

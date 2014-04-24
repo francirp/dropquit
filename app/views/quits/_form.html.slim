@@ -1,21 +1,28 @@
 .row.form
   = simple_form_for(@quit, html: { id: "edit_quit_form" }) do |f|
-    .row.amount-area
-      .small-12.medium-8.large-5.columns
-        .row
-          .small-12.columns
-            label Amount to Bet Per Week
-        .row.field
-          .small-2.columns
-            span.prefix $
-          .small-4.columns
-            = f.input :investment, label: false, placeholder: "20.00"
-          .small-6.columns
-            span.postfix per week
-    .row.accountability-partner-area
-      .small-12.medium-8.large-6.columns
-        = f.input :partner_email, label: "Accountability Partner Email (optional)", placeholder: 'ryan@example.com'
-    .row.payment-form-area
-      = render 'payment_form'
-    .row.button-area
-      = f.submit "#{page_title}", class: 'button large radius', id: 'submit_quit'
+    .small-12.medium-12.large-6.columns
+      .header 1. Setup Your Quit
+      .row.amount-area
+        .small-12.medium-8.large-7.columns
+          .row
+            .small-12.columns
+              label Amount to Bet Per Week
+          .row.field
+            .small-1.large-1.columns
+              span.prefix $
+            .small-3.large-4.columns
+              = f.input :investment, label: false, placeholder: "20.00"
+            .small-4.columns.left
+              span.postfix per week
+      .row.accountability-partner-area
+        .small-12.medium-8.large-7.columns
+          label Accountability Partner Email
+          i
+            | (optional)
+          = f.input :partner_email, label: false, placeholder: 'ryan@example.com'
+    .small-12.medium-12.large-6.columns
+      .header 2. Add Credit Card
+      .row.payment-form-area
+        = render 'payment_form'
+      .row.button-area
+        = f.submit "#{page_title}", class: 'button large radius', id: 'submit_quit'

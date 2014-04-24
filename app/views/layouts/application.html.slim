@@ -5,7 +5,7 @@ html
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-    - stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300"
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300"
   body.application
     .off-canvas-wrap data-offcanvas=''
       .inner-wrap
@@ -17,7 +17,9 @@ html
           - elsif current_user.has_not_posted_roll_call_today?
             = render 'layouts/notification_bar', notification_text: 'Post your roll call for today', notification_link_text: 'here', notification_link: new_checkpoint_path
           div class="row #{controller_name}-#{action_name}"
-            = render 'layouts/sidebar'
-            .small-10.columns.main
+            .small-6.medium-4.large-2.columns.sidebar
+              = render 'layouts/sidebar'
+            .small-6.medium-8.large-10.columns.main
               = render 'layouts/page_header'
-              = yield
+              .page-content-area
+                = yield

@@ -3,18 +3,16 @@
     @extend .fontfamily-light
     font-size: $fontsize-medium
   .main
-    border-right: thin solid $dark-grey
-    background-color: $white
+    .page-content-area
+      padding: 2em
     .date-stats
-      background-color: #E8F2FF
       .header
         @extend .blue-bold-text
         font-size: $fontsize-medium
         margin-bottom: 1em
         &:before
           @include fontIcon("\f080")
-      padding: 1.5em 2em
-      border-top: thin solid $light-grey
+      padding: 0em 0em 3em 0em
       border-bottom: thin solid $base-grey
       .stat
         font-size: $fontsize-base
@@ -25,56 +23,39 @@
     .date-area
       text-align: center
       padding: 0.3em 0 0.3em 0
-      background-color: $light-orange
-      border-bottom: thin solid $base-grey
+      background-color: $light-grey
+      border: thin solid $base-grey
+      border-top: none
       .date
         @extend .fontfamily-medium
         font-size: $fontsize-base
     .posts
+      border-left: thin solid $base-grey
+      border-right: thin solid $base-grey
       .post
         padding: 1em
         border-bottom: thin solid $base-grey
+        .header
+          .name
+            @extend .fontfamily-medium
+            font-size: $fontsize-medium
+          .other-info
+            float: right
+            font-size: $fontsize-small
+            color: $base-grey
+            span.type-introduction
+              color: $dark-green
+              @extend .fontfamily-heavy
         .avatar-area
-          padding-right: 1em
+          text-align: center
           .avatar
-            height: 80px
+            width: 100%
             @include borderRadius(5px)
             float: right
         .main-post-area
           padding-left: 1em
-          .header
-            .name
-              @extend .fontfamily-medium
-              font-size: $fontsize-big
-            .type
-              text-align: center
-              @extend .fontfamily-light
-              font-size: $fontsize-big
-            .day
-              display: inline
-              padding: 10px 0px
-              font-size: $fontsize-small
-              color: $base-grey
-              @extend .fontfamily-medium
           .content-area
-            padding-top: 0.8em
+            margin-top: 0.5em
             line-height: 1.5em
-.posts-new, .posts-edit
-  .example-area
-    border: thin solid $dark-grey
-    @include borderRadius(5px)
-    background-color: #E8F2FF
-    padding: 1em
-    .example-header
-      @extend .fontfamily-medium
-      font-size: $fontsize-big
-    .example-text
-      margin-top: 1em
-  .form-area
-    margin-top: 1.5em
-    textarea
-      height: 130px
-    .boolean
-      font-size: $fontsize-medium
-      margin-right: 0.5em
-
+            p
+              margin: 0
