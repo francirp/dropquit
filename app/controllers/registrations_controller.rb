@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   layout "registrations"
-  layout "application", only: [:edit]
+  layout "application", only: [:edit, :update]
   def new
     pull_lead
     super
@@ -30,8 +30,16 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
+    def after_update_path_for(resource)
+      edit_registration_path(resource)
+    end
+
     def pull_lead
       @lead = Lead.new(amount: params[:amount], group: params[:group], roll_call: params[:roll_call])
     end
+
+  def update_resource(resource, params)
+    resource.update_attributes(params)
+  end
 
 end

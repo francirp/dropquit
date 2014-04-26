@@ -17,8 +17,9 @@ gem 'simple_form'
 gem 'slim'
 gem 'workflow'
 gem 'stripe'
-gem 'paperclip'
+gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
+gem 'cocaine'
 
 group :doc do
   gem 'sdoc', require: false
@@ -27,4 +28,17 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+end
+
+group :test do
+  gem "faker"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
 end

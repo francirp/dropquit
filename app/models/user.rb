@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   has_many :checkpoints
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
   validates :handle, presence: true, uniqueness: true
 
   scope :todays_new_members, where("created_at>=? AND created_at<=?", DateTime.now.beginning_of_day, DateTime.now.end_of_day)
