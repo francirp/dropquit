@@ -42,6 +42,7 @@ class QuitsController < ApplicationController
   # PATCH/PUT /quits/1
   # PATCH/PUT /quits/1.json
   def update
+    @page_title = @quit.pending_activation? ? "Start Your Quit" : "Update Your Quit"
     token = params[:stripeToken]
     current_user.new_card(token: token) if token.present?
     @quit.activate! if @quit.pending_activation?

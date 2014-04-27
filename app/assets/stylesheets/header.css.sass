@@ -11,13 +11,24 @@ body.application
     position: fixed
     width: 100%
     z-index: 1001
-    a.left-off-canvas-toggle
+    a.left-avatar-area
       margin-left: -15px
       padding: 5px 20px 10px 20px
       line-height: $navbar-offset - 5px
       color: $white
-      font-size: $fontsize-big
-      border-right: thin solid black
+      .columns
+        padding-left: 0.5em
+        padding-right: 0px
+      .avatar-column
+        float: right
+      .header-avatar
+        height: 34px
+        @include borderRadius(17px)
+        border: 2px solid $white
+      .header-name
+        font-size: $fontsize-small
+        border-right: thin solid black
+        padding-bottom: 5px
     .logo
       text-align: center
       line-height: $navbar-offset

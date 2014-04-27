@@ -1,9 +1,13 @@
 header
   .row
-    / .small-1.columns
-    /   a.left-off-canvas-toggle href="#"
-    /     i.fa.fa-bars
-    .small-2.small-offset-5.columns
+    .small-5.columns
+      .row
+        = link_to edit_user_registration_path(current_user), class: 'left-avatar-area' do
+            .small-4.medium-2.large-1.columns
+              .avatar-column = image_tag current_user.avatar.url, class: 'header-avatar'
+            .small-6.medium-4.large-2.columns.left
+              .header-name = current_user.handle
+    .small-2.columns
       .logo
         = link_to 'DROPQUIT', root_path(@root), class: 'dropquit'
     .small-2.columns.right-buttons
