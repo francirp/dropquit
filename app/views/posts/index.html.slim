@@ -7,7 +7,7 @@
       .row.post
         = render "post", post: post
         .row.comment-area
-          .small-10.small-offset-2.columns
+          .small-11.small-offset-1.columns
             .row
               - post.root_comments.order("created_at ASC").each do |comment|
                 = render 'comment', comment: comment
