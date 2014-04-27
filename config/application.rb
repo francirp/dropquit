@@ -31,6 +31,7 @@ module Dropquit
 
       config.to_prepare do
         Devise::SessionsController.layout "registrations"
+        Devise::PasswordsController.layout "registrations"
       end
 
       config.paperclip_defaults = {
