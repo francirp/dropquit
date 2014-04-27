@@ -48,4 +48,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.daily_roll_call
+    User.all.each do |user|
+      if user.has_not_posted_roll_call_today? && Rails.env.production?
+        SiteMailer.roll_call_reminder(user).deliver
+      end
+    end
+  end
+
 end

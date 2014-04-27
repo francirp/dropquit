@@ -16,4 +16,13 @@ class SiteMailer < ActionMailer::Base
       )
   end
 
+  def roll_call_reminder(user)
+    @user = user
+    correct_email = Rails.env.production? ? @user.email : SiteMailer.admin_email_address
+    mail(
+      to: correct_email,
+      subject: "Reminder To Post Roll Call"
+      )
+  end
+
 end
