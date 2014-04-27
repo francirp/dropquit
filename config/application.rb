@@ -33,15 +33,29 @@ module Dropquit
         Devise::SessionsController.layout "registrations"
       end
 
-    config.paperclip_defaults = {
-    :default_url => "missing_avatar.jpg",
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      config.paperclip_defaults = {
+      :default_url => "missing_avatar.jpg",
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV['AWS_BUCKET'],
+        :access_key_id => ENV['AWS_ACCESS_KEY'],
+        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+        }
       }
-    }
+
+      config.action_mailer.delivery_method = :smtp
+      config.action_mailer.default_url_options = { :host => ENV['APPLICATION_ROOT_URL'] }
+      config.action_mailer.perform_deliveries = true
+
+      config.action_mailer.smtp_settings = {
+        address: "smtp.mandrillapp.com",
+        port: 587,
+        domain: ENV['APPLICATION_ROOT_URL'],
+        authentication: "plain",
+        enable_starttls_auto: true,
+        user_name: ENV['EMAIL'],
+        password: ENV['EMAIL_PASSWORD']
+      }
     end
   end
 end

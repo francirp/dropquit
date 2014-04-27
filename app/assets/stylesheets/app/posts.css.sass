@@ -1,4 +1,4 @@
-.posts-index
+.posts-index, .posts-show
   .day
     @extend .fontfamily-light
     font-size: $fontsize-medium
@@ -25,7 +25,6 @@
       padding: 0.3em 0 0.3em 0
       background-color: $light-grey
       border: thin solid $base-grey
-      border-top: none
       .date
         @extend .fontfamily-medium
         font-size: $fontsize-base
@@ -68,3 +67,9 @@
             margin-bottom: 0.5em
           .name
             @extend .fontfamily-heavy
+.posts-show
+  .date-area
+    border-top: thin solid $base-grey
+.posts-index
+  .date-area
+    border-top: none !important

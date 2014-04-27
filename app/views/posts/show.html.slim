@@ -1,0 +1,24 @@
+.row.date-area
+  .date = @post.created_at.strftime("%A %b %e, %Y")
+.row.posts
+  .row.post
+    = render "post", post: @post
+    .row.comment-area
+      .small-10.small-offset-2.columns
+        .row
+          - @post.root_comments.order("created_at ASC").each do |comment|
+            = render 'comment', comment: comment
+            - if comment.has_children?
+              - comment.children.each do |child|
+                = render 'comment', comment: child
+            / = render 'reply_comment', post: @post, comment: comment
+        .row
+          .comment-form id="comment-post-#{@post.id}" style="display:none"
+            .comment-header Leave a Comment
+            = form_tag(comments_path) do
+              = hidden_field_tag :post_id, @post.id
+              = text_area_tag :body
+              = submit_tag "Submit"
+    .row.button-area
+      .small-2.columns.right
+        = link_to 'Add Comment', '#', class: 'comment-link leave-comment', data: { id: @post.id }

@@ -6,6 +6,11 @@ class PostsController < ApplicationController
     @page_title = @post.form_label
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @page_title = "Post Detail"
+  end
+
   def index
     @posts = post_class.all.order("created_at DESC").group_by(&:date)
     @post = post_class.new
