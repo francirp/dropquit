@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('page:change', function(){
   if ( $('body').hasClass('application') ){
 
     $(".leave-comment").on('click', function(e){

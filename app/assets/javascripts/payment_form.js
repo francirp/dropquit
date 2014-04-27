@@ -1,4 +1,5 @@
-$(function(){
+$(document).on('page:change', function(){
+
   if ( $('body').hasClass('application') ){
 
     $("#change-card").on('click', function(e){
