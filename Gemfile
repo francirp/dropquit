@@ -22,6 +22,7 @@ gem 'aws-sdk'
 gem 'acts_as_commentable_with_threading'
 gem 'kaminari'
 gem 'newrelic_rpm'
+gem 'rails_12factor'
 
 group :doc do
   gem 'sdoc', require: false
