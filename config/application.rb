@@ -33,6 +33,15 @@ module Dropquit
         Devise::SessionsController.layout "registrations"
       end
 
+    config.paperclip_defaults = {
+    :default_url => "missing_avatar.jpg",
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }
     end
   end
 end

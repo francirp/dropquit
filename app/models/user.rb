@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :quits
-  has_many :posts
-  has_many :checkpoints
+  has_many :quits, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :checkpoints, dependent: :destroy
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
