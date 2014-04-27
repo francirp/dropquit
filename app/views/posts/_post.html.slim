@@ -4,7 +4,8 @@
 .small-9.medium-10.large-11.columns.main-post-area
   .row.header
     .small-7.medium-4.large-3.columns
-      .name = link_to post.user.handle, user_registration_path(post.user)
+      / .name = link_to post.user.handle, user_registration_path(post.user)
+      .name = post.user.handle
     .small-5.columns.right
       .other-info
         span class="type-#{post.type.downcase}" = post.type_text

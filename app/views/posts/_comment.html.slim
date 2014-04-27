@@ -3,4 +3,6 @@
     .row.avatar-area
       = image_tag comment.user.avatar.url, class: "avatar"
   .small-9.medium-10.large-11.columns.main-post-area
+    / .name = link_to comment.user.handle, user_registration_path(comment.user)
+    .name = comment.user.handle
     p = comment.body
