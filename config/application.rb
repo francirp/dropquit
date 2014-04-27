@@ -34,7 +34,7 @@ module Dropquit
       end
 
       config.paperclip_defaults = {
-      :default_url => "missing_avatar.jpg",
+      :default_url => "default_avatar.png",
       :storage => :s3,
       :s3_credentials => {
         :bucket => ENV['AWS_BUCKET'],

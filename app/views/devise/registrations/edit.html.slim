@@ -4,5 +4,5 @@
       .avatar = image_tag @user.avatar.url(:medium)
       = f.file_field :avatar
       = f.input :email
-      = f.input :handle, label: "Handle"
+      = f.input :handle
       = f.button :submit, "Update"
