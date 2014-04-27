@@ -1,4 +1,5 @@
 class QuitsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_quit, only: [:show, :edit, :update, :destroy]
 
   # GET /quits

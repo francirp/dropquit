@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  :set_post_type
+  before_action :authenticate_user!
+  before_filter :set_post_type
 
   def new
     @post = post_class.new(date: Date.today)
