@@ -31,21 +31,31 @@ class User < ActiveRecord::Base
     quits.last
   end
 
-  def setup_stripe(args = {})
+  def new_card(args = {})
+    customer = stripe_customer_token.present? ? retrieve_stripe_customer : create_stripe_customer
+    if customer.cards.any?
+      customer.cards.first.delete()
+    end
+    customer.cards.create(card: args[:token])
+  end
+
+  def create_stripe_customer(args = {})
     customer = Stripe::Customer.create(
-      :email => email,
-      :card  => args[:token]
+      :email => email
     )
     self.stripe_customer_token = customer.id
     self.save
+    return customer
   end
 
-  def retrieve_stripe
-    customer = Stripe::Customer.retrieve(stripe_customer_token)
+  def retrieve_stripe_customer
+    Stripe::Customer.retrieve(stripe_customer_token)
+  end
+
+  def retrieve_last_four
+    customer = retrieve_stripe_customer
     card = customer.cards.first
-    if card
-      card["last4"]
-    end
+    card["last4"] if card
   end
 
   def self.daily_roll_call

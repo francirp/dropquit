@@ -1,28 +1,33 @@
 .header 2. Add Credit Card
 .row.payment-form-area
-  form#payment-form action="" method="POST"
-    span.payment-errors
-    .row.form-row
-      .small-12.medium-8.large-7.columns
-        label
-          span Card Number
-        input type="text" size="20" data-stripe="number"
-    .row.form-row
-      .small-12.medium-8.large-7.columns
-        .row
-          .small-4.columns
-            label
-              span CVC
-            input type="text" size="4" data-stripe="cvc"
-          .small-8.columns
-            .row.form-row
-              .small-12.columns
-                label
-                  span Expiration
-            .row
-              .small-5.columns
-                input type="text" size="2" data-stripe="exp-month"
-              .small-1.columns.slash
-                | /
-              .small-6.columns
-                input type="text" size="4" data-stripe="exp-year"
+  - if current_user.stripe_customer_token.present?
+    label Active Card
+    p = "Ending in #{@last_four}"
+    = link_to 'Change Card', '#', id: 'change-card', class: 'button small radius secondary'
+  .row#card-form style="#{'display:none' if @last_four.present?}"
+    form#payment-form action="" method="POST"
+      span.payment-errors
+      .row.form-row
+        .small-12.medium-8.large-7.columns
+          label
+            span Card Number
+          input type="text" size="20" data-stripe="number"
+      .row.form-row.expiration-row
+        .small-12.medium-8.large-7.columns
+          .row
+            .small-4.columns
+              label
+                span CVC
+              input type="text" size="4" data-stripe="cvc"
+            .small-8.columns.padding-left
+              .row.form-row
+                .small-12.columns
+                  label
+                    span Expiration
+              .row
+                .small-5.columns
+                  input type="text" size="2" data-stripe="exp-month" placeholder="MM"
+                .small-1.columns.slash.padding-left
+                  | /
+                .small-6.columns.padding-left
+                  input type="text" size="4" data-stripe="exp-year" placeholder="YYYY"

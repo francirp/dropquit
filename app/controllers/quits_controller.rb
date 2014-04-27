@@ -20,6 +20,7 @@ class QuitsController < ApplicationController
   # GET /quits/1/edit
   def edit
     @page_title = @quit.pending_activation? ? "Start Your Quit" : "Update Your Quit"
+    @last_four = current_user.retrieve_last_four
   end
 
   # POST /quits
@@ -42,11 +43,11 @@ class QuitsController < ApplicationController
   # PATCH/PUT /quits/1.json
   def update
     token = params[:stripeToken]
-    current_user.setup_stripe(token: token)
-    @quit.activate!
+    current_user.new_card(token: token) if token.present?
+    @quit.activate! if @quit.pending_activation?
     respond_to do |format|
       if @quit.update(quit_params)
-        format.html { redirect_to edit_quit_path(@quit), notice: 'Quit was successfully updated.' }
+        format.html { redirect_to edit_quit_path(@quit), notice: 'Your quit was successfully updated.' }
         format.json { head :no_content }
       else
         @quit.retract!
