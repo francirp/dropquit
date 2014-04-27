@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = post_class.all.order("created_at DESC").group_by(&:date)
+    @paginated_posts = post_class.all.order("created_at DESC").page(params[:page])
+    @posts = @paginated_posts.group_by(&:date)
     @post = post_class.new
     @page_title = "Latest Member #{@post.type_text.pluralize}"
   end

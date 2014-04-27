@@ -25,3 +25,6 @@
         .row.button-area
           .small-2.columns.right
             = link_to 'Add Comment', '#', class: 'comment-link leave-comment', data: { id: post.id }
+.row.pagination-area
+  .small-6.small-centered.columns
+    = paginate @paginated_posts
