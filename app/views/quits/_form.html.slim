@@ -21,8 +21,10 @@
             | (optional)
           = f.input :partner_email, label: false, placeholder: 'ryan@example.com'
     .small-12.medium-12.large-6.columns
-      .header 2. Add Credit Card
-      .row.payment-form-area
+      - if current_user.stripe_customer_token.present?
+        p = "Card ending in #{current_user.retrieve_stripe}"
+      - else
         = render 'payment_form'
       .row.button-area
         = f.submit "#{page_title}", class: 'button large radius', id: 'submit_quit'
+= render "stripe"

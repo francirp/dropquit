@@ -18,5 +18,6 @@ html
               = render 'layouts/sidebar'
             .small-9.large-10.columns.main
               = render 'layouts/page_header'
-              .page-content-area
-                = yield
+              .row.page-content-area
+                .small-12.large-8.columns.left
+                  = yield

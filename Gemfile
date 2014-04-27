@@ -19,7 +19,7 @@ gem 'workflow'
 gem 'stripe'
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
-gem 'cocaine'
+gem 'acts_as_commentable_with_threading'
 
 group :doc do
   gem 'sdoc', require: false

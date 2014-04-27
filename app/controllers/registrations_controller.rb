@@ -1,6 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_filter :set_page_title, only: [:edit, :update]
   layout "registrations"
   layout "application", only: [:edit, :update]
+
   def new
     pull_lead
     super
@@ -38,8 +40,12 @@ class RegistrationsController < Devise::RegistrationsController
       @lead = Lead.new(amount: params[:amount], group: params[:group], roll_call: params[:roll_call])
     end
 
-  def update_resource(resource, params)
-    resource.update_attributes(params)
-  end
+    def update_resource(resource, params)
+      resource.update_attributes(params)
+    end
+
+    def set_page_title
+      @page_title = "Update Your Profile"
+    end
 
 end

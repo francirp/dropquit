@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 
   belongs_to :user
-
+  acts_as_commentable
   scope :todays_posts, ->(type) {Post.where(date: Date.today, type: type)}
 
   def checkpoint?

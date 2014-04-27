@@ -1,0 +1,8 @@
+p.thread_divider data-comment-id=comment.id
+  = link_to 'Reply to Comment', "#_", class: 'reply_link comment-link'
+  .reply_comment.small-10-offset-2.columns id="reply_comment_#{comment.id}" style="display:none;"
+    = form_tag(comments_path) do
+      = hidden_field_tag :post_id, post.id
+      = hidden_field_tag :parent_comment_id, comment.id
+      = text_area_tag :body
+      = submit_tag "Reply"

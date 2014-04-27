@@ -31,4 +31,21 @@ class User < ActiveRecord::Base
     quits.last
   end
 
+  def setup_stripe(args = {})
+    customer = Stripe::Customer.create(
+      :email => email,
+      :card  => args[:token]
+    )
+    self.stripe_customer_token = customer.id
+    self.save
+  end
+
+  def retrieve_stripe
+    customer = Stripe::Customer.retrieve(stripe_customer_token)
+    card = customer.cards.first
+    if card
+      card["last4"]
+    end
+  end
+
 end

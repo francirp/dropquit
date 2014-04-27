@@ -1,11 +1,8 @@
 .row.page-padding
   .small-10.medium-8.large-6.columns
     = simple_form_for(resource, :as => resource_name, html: { multipart: true }, :url => registration_path(resource_name)) do |f|
-      = image_tag @user.avatar.url(:medium)
+      .avatar = image_tag @user.avatar.url(:medium)
       = f.file_field :avatar
       = f.input :email
       = f.input :handle, label: "Handle"
-      = f.button :submit
-    / = form_for(resource, as: resource_name, html: { multipart: true }, url: registration_path(resource_name)) do |f|
-    /   = f.file_field :avatar
-    /   = f.submit
+      = f.button :submit, "Update"

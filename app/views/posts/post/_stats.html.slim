@@ -2,16 +2,16 @@
   .row
     .header Today's Statistics
   .row
-    .small-3.columns
-      .stat = Post.count_today
-      .stat-text = "#{@post_type.constantize.new.type_text}s Added"
-    .small-3.columns
+    / .small-3.columns
+    /   .stat = Post.count_today
+    /   .stat-text = "#{@post_type.constantize.new.type_text}s Added"
+    .small-4.columns
       .stat = Checkpoint.percent_roll_call_achievement
       .stat-text Posted Roll Call
-    .small-3.columns
+    .small-4.columns
       - todays_new_members = User.count_todays_new_members
       .stat = todays_new_members
       .stat-text = "New Member#{'s' if todays_new_members > 1}"
-    .small-3.columns
+    .small-4.columns
       .stat = Checkpoint.count_days_freedom_earned
       .stat-text Days of Freedom Earned

@@ -42,12 +42,14 @@ class QuitsController < ApplicationController
   # PATCH/PUT /quits/1.json
   def update
     token = params[:stripeToken]
-    raise token.inspect
+    current_user.setup_stripe(token: token)
+    @quit.activate!
     respond_to do |format|
       if @quit.update(quit_params)
-        format.html { redirect_to @quit, notice: 'Quit was successfully updated.' }
+        format.html { redirect_to edit_quit_path(@quit), notice: 'Quit was successfully updated.' }
         format.json { head :no_content }
       else
+        @quit.retract!
         format.html { render action: 'edit' }
         format.json { render json: @quit.errors, status: :unprocessable_entity }
       end

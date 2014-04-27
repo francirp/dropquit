@@ -1,0 +1,6 @@
+.row.comment id="comment_#{comment.id}"
+  .small-3.medium-2.large-1.user_comments.columns
+    .row.avatar-area
+      = image_tag comment.user.avatar.url, class: "avatar"
+  .small-9.medium-10.large-11.columns.main-post-area
+    p = comment.body
