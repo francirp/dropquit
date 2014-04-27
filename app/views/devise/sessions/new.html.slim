@@ -1,0 +1,12 @@
+.row.sign-in
+  .small-11.medium-8.large-6.small-centered.columns.container
+    .row.header-area
+      .page-header.small-11.small-centered.columns
+        .header-text Sign In
+    .row.form-area
+      .large-11.small-11.small-centered.columns
+        = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+          = f.input :email
+          = f.input :password
+          = f.button :submit
+        = render "devise/shared/links"
