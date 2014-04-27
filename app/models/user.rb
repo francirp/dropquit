@@ -52,10 +52,16 @@ class User < ActiveRecord::Base
     Stripe::Customer.retrieve(stripe_customer_token)
   end
 
+  def has_stripe_token?
+    stripe_customer_token.present?
+  end
+
   def retrieve_last_four
-    customer = retrieve_stripe_customer
-    card = customer.cards.first
-    card["last4"] if card
+    if has_stripe_token?
+      customer = retrieve_stripe_customer
+      card = customer.cards.first
+      card["last4"] if card
+    end
   end
 
   def self.daily_roll_call
