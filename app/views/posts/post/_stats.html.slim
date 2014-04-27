@@ -11,7 +11,7 @@
     .small-4.columns
       - todays_new_members = User.count_todays_new_members
       .stat = todays_new_members
-      .stat-text = "New Member#{'s' if todays_new_members > 1}"
+      .stat-text = "New Member#{'s' unless todays_new_members == 1}"
     .small-4.columns
       .stat = Checkpoint.count_days_freedom_earned
       .stat-text Days of Freedom Earned

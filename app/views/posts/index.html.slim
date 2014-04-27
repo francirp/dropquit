@@ -21,7 +21,8 @@
                 = form_tag(comments_path) do
                   = hidden_field_tag :post_id, post.id
                   = text_area_tag :body
-                  = submit_tag "Submit"
+                  = submit_tag "Submit", class: 'button small radius'
+                  = link_to "Cancel", '#', class: 'cancel-comment'
         .row.button-area
           .small-2.columns.right
             = link_to 'Add Comment', '#', class: 'comment-link leave-comment', data: { id: post.id }

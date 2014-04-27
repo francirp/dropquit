@@ -1,10 +1,15 @@
 $(function(){
-  if ( $('body').is('.application') ){
+  if ( $('body').hasClass('application') ){
 
     $(".leave-comment").on('click', function(e){
       e.preventDefault();
       var id = $(this).data('id');
       $("#comment-post-" + id).toggle();
+    });
+
+    $(".cancel-comment").on('click',function(e){
+      e.preventDefault();
+      $(this).parents('.comment-form').hide();
     });
 
     $(".reply_link").click(function(e) {
