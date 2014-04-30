@@ -4,7 +4,7 @@
   .row
     / .small-3.columns
     /   .stat = Post.count_today
-    /   .stat-text = "#{@post_type.constantize.new.type_text}s Added"
+    /   .stat-text = "#{@object_type.constantize.new.type_text}s Added"
     .small-4.columns
       .stat = Checkpoint.percent_roll_call_achievement
       .stat-text Posted Roll Call

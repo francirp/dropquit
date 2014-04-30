@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :set_post_type
+  before_filter :set_object_type
 
   def new
-    @post = post_class.new
+    @post = object_class.new
     @page_title = @post.form_label
   end
 
@@ -13,10 +13,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @paginated_posts = post_class.all.order("created_at DESC").page(params[:page])
+    @paginated_posts = object_class.all.order("created_at DESC").page(params[:page])
     @posts = Post.group_by_date(@paginated_posts)
-    @post = post_class.new
-    @page_title = "Latest Member #{@post.type_text.pluralize}"
+    @page_title = "Latest Member #{object_class.new.type_text.pluralize}"
   end
 
   def create
@@ -30,38 +29,38 @@ class PostsController < ApplicationController
     end
   end
 
-  def update
-    @post = post_class.find(params[:id])
+  # def update
+  #   @post = object_class.find(params[:id])
 
-    if @post.update_attributes(params[:post])
-      #do something
-    else
-      #do something
-    end
-  end
+  #   if @post.update_attributes(params[:post])
+  #     #do something
+  #   else
+  #     #do something
+  #   end
+  # end
 
-  def destroy
-    @post = post_class.find(params[:id])
-    @post.destroy
-    #redirect_to somewhere
-  end
+  # def destroy
+  #   @post = object_class.find(params[:id])
+  #   @post.destroy
+  #   #redirect_to somewhere
+  # end
 
 
   private
 
-    def set_post_type
-      @post_type = post_type
+    def set_object_type
+      @object_type = object_type
     end
 
-    def post_type
-      @post_type = params[:type] || 'Post'
+    def object_type
+      @object_type = params[:type] || controller_name.classify
     end
 
-    def post_class
-      post_type.constantize
+    def object_class
+      object_type.constantize
     end
 
     def post_params
-      params.require(post_type.underscore.to_sym).permit(:type, :content, :stayed_clean)
+      params.require(object_type.underscore.to_sym).permit(:type, :content, :stayed_clean)
     end
 end

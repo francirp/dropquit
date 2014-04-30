@@ -1,4 +1,4 @@
-= render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
+= render "posts/#{@object_type.downcase}/stats" if ['Post'].index(@object_type).present?
 - @posts.each do |date, posts|
   .row.date-area
     .date = date.to_date.strftime("%A %b %e, %Y")

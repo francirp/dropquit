@@ -3,12 +3,12 @@
 /   ul.navigation
 /     - [['Post','All'],['Checkpoint','Roll Calls'],['Introduction','Introductions']].each do |array|
 /       = link_to sti_post_path(array[0]) do
-/         li class="#{'active' if @post_type == array[0]}"
+/         li class="#{'active' if @object_type == array[0]}"
 /           = array[1]
 section.general-nav
   ul.navigation
     = link_to posts_path do
-      li class="#{'active' if @post_type == 'Post'}" Feed
+      li class="#{'active' if @object_type == 'Post'}" Feed
     = link_to edit_quit_path(current_user.quit) do
       li class="#{'active' if controller_name == 'quits'}" My Quit
     = link_to edit_user_registration_path do

@@ -4,7 +4,7 @@
   .row
     .small-3.columns
       .stat = Checkpoint.count_today
-      .stat-text = "#{@post_type.constantize.new.type_text}s"
+      .stat-text = "#{@object_type.constantize.new.type_text}s"
     .small-3.columns
       .stat 95%
       .stat-text Achievement
