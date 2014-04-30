@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
   acts_as_commentable
   paginates_per 30
 
+  scope :todays_user_posts, ->(user) { where("user_id=? AND created_at>=? AND created_at<=?", user.id, AppSettings.central_time.beginning_of_day, AppSettings.central_time.end_of_day) }
   scope :todays_posts, ->{ where("created_at>=? AND created_at<=?", AppSettings.central_time.beginning_of_day, AppSettings.central_time.end_of_day) }
-  scope :sprays_within_date_range, ->(course_id,start_date,end_date,state) { where('course_id=? AND date>=? AND date<=? AND spray_state=?', course_id, start_date, end_date, state) }
 
   def checkpoint?
     self.type == 'Checkpoint'
