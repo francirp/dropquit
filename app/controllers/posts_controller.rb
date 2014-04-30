@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :set_post_type
 
   def new
-    @post = post_class.new(date: Date.today)
+    @post = post_class.new
     @page_title = @post.form_label
   end
 

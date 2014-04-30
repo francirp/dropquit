@@ -1,8 +1,6 @@
 class Introduction < Post
 
-  def self.count_today
-    todays_posts(model_name.name).count
-  end
+  scope :todays_posts, ->{ where("type=? AND created_at>=? AND created_at<=?", model_name.name, AppSettings.central_time.beginning_of_day, AppSettings.central_time.end_of_day) }
 
   def form_label
     "Introduce Yourself"

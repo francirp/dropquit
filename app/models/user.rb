@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def has_not_posted_roll_call_today?
-    Checkpoint.user_daily_roll_call(self).blank?
+    Checkpoint.todays_posts.blank?
   end
 
   def streak
