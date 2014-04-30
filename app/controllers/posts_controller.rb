@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def index
     @paginated_posts = post_class.all.order("created_at DESC").page(params[:page])
-    @posts = @paginated_posts.group_by(&:date)
+    @posts = Post.group_by_date(@paginated_posts)
     @post = post_class.new
     @page_title = "Latest Member #{@post.type_text.pluralize}"
   end
@@ -62,6 +62,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(post_type.underscore.to_sym).permit(:type, :content, :date, :stayed_clean)
+      params.require(post_type.underscore.to_sym).permit(:type, :content, :stayed_clean)
     end
 end

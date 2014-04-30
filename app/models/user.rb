@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   validates :email, :handle, presence: true, uniqueness: true
 
-  scope :todays_new_members, where("created_at>=? AND created_at<=?", DateTime.now.beginning_of_day, DateTime.now.end_of_day)
+  scope :todays_new_members, -> { where("created_at>=? AND created_at<=?", DateTime.now.beginning_of_day, DateTime.now.end_of_day) }
 
   def self.count_todays_new_members
     todays_new_members.count

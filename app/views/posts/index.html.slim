@@ -1,7 +1,7 @@
 = render "posts/#{@post_type.downcase}/stats" if ['Post'].index(@post_type).present?
 - @posts.each do |date, posts|
   .row.date-area
-    .date = date.strftime("%A %b %e, %Y")
+    .date = date.to_date.strftime("%A %b %e, %Y")
   .row.posts
     - posts.each do |post|
       .row.post

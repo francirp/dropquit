@@ -1,6 +1,6 @@
 class Checkpoint < Post
 
-  scope :user_daily_roll_call, ->(user) { where("user_id=? AND date=?", user.id, Date.today) }
+  scope :user_daily_roll_call, ->(user) { where("user_id=? AND type=? AND created_at>=? AND created_at<=?", user.id, model_name.name, AppSettings.central_time.beginning_of_day, AppSettings.central_time.end_of_day) }
 
   def self.count_today
     todays_posts(model_name.name).count
