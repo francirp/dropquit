@@ -1,11 +1,11 @@
 module PostsHelper
 
-  def sti_post_path(post_type = "post", post = nil, action = nil)
-    send "#{format_sti(action, post_type, post)}_path", post
+  def sti_post_path(object_type = "post", object = nil, action = nil)
+    send "#{format_sti(action, object_type, object)}_path", object
   end
 
-  def format_sti(action, post_type, post)
-    action || post ? "#{format_action(action)}#{post_type.underscore}" : "#{post_type.underscore.pluralize}"
+  def format_sti(action, object_type, object)
+    action || object ? "#{format_action(action)}#{object_type.underscore}" : "#{object_type.underscore.pluralize}"
   end
 
   def format_action(action)
