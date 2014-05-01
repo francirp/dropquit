@@ -3,7 +3,7 @@
     section.main_img
       .row
         .small-10.small-centered.columns
-        h1 Dropkick your addiction
+        h1 Dropkick Your Tobacco addiction
         tion
     section.addiction
       .row
@@ -22,15 +22,15 @@
           li
             i.fa.fa-usd
             h3.heading Skin In The Game
-            p Simply saying to yourself, “I am done for good” is nothing more than you talking to yourself. You need to physically invest in quitting. To use DropQuit, you must bet $20 or more per week on your quit. For each week that you stay solid, you will earn points that can be redeemed for real stuff.
+            p Simply saying to yourself, “I am done for good” is nothing more than you talking to yourself. You need to physically invest in quitting. To use DropQuit, you must bet $20 or more per week on your quit. It's time to get serious.
           li
             i.fa.fa-group
-            h3.heading Accountability
-            p You need an accountability partner to keep you honest. Every week, your partner will verify that you've stayed true to your goal. Should you fail to stay clean for a given week, your accountability partner will reap the benefits by receiving a portion of your weekly commitment.
+            h3.heading Community
+            p With DropQuit, you will become a member of a tight knit group of people focused on staying quit and supporting one another. Optionally, you can also add a friend to act as an accountability partner.
           li
             i.fa.fa-microphone
-            h3.heading Daily Roll Call
-            p The last step is Daily Roll call. To replace one bad habit, we must form an opposing good one. Every day, you will make an oath to the DropQuit community that you will not use any form of tobacco that day. This is the lifeblood of your quit and is required to complete the program.
+            h3.heading Accountability
+            p To replace one bad habit, we must form an opposing good one. Every day, you will make an oath to the DropQuit community that you will not use any form of tobacco that day. This is the lifeblood of your quit.
       = form_tag(new_user_registration_path, method: 'get') do
         .row
           ul.critical_components_form
@@ -51,15 +51,18 @@
         .row
           .large-6.large-centered.columns
             = submit_tag "HELP ME QUIT", class: 'button large radius home_page_sign_up_btn'
-    section.fight_with_us
       .row
-        .large-6.medium-8.small-12.medium-centered.large-centered.columns
-          ul
-            li
-              h1 Fight With Us.
-              p This is your life – take it back right now. Not tomorrow or next week. There is only one time to quit – it is right here, and right now. Get off the mat and start kicking the crap out of your addiction. It is your turn.
-            .row.collapse
-              .small-9.columns
-                input type="text" placeholder="Email"
-              .small-3.columns
-                = link_to "LET'S FIGHT", "#", class: "button postfix"
+        .small-12.columns
+          blockquote This is your life – take it back right now. Not tomorrow or next week. There is only one time to quit – it is right here, and right now. Get off the mat and start kicking the crap out of your addiction. It is your turn.
+    / section.fight_with_us
+    /   .row
+    /     .large-6.medium-8.small-12.medium-centered.large-centered.columns
+    /       ul
+    /         li
+    /           h1 Fight With Us.
+    /           p This is your life – take it back right now. Not tomorrow or next week. There is only one time to quit – it is right here, and right now. Get off the mat and start kicking the crap out of your addiction. It is your turn.
+    /         .row.collapse
+    /           .small-9.columns
+    /             input type="text" placeholder="Email"
+    /           .small-3.columns
+    /             = link_to "LET'S FIGHT", "#", class: "button postfix"

@@ -82,6 +82,28 @@ $grid-small-three: 1;
         display: inline-block;
       }
     }
+    blockquote {
+      margin-top: 2em;
+      color: white;
+      border-left: none;
+      font-size: $fontsize-big;
+      @extend .fontfamily-light;
+      line-height: 1.7em;
+      position: relative;
+      // &:before {
+      //   position: absolute;
+      //   top: -5px;
+      //   left: -2px;
+      //   padding-right: 5px;
+      //   @include fontIcon("\f10d")
+      // }
+      // &:after {
+      //   position: absolute;
+      //   top: -5px;
+      //   right: -10px;
+      //   @include fontIcon("\f10e")
+      // }
+    }
   }
   section.fight_with_us {
     background-color: white;

@@ -4,6 +4,11 @@
 body{ @extend .fontfamily-base; color:$dark-grey; height: 100%;}
 // body.application { background-image: asset-url('tweed.png'); }
 .pages_layout { padding-bottom: 150px; background-color: $white; }
+body.pages {
+  .pages_layout {
+    padding-bottom: 0px;
+  }
+}
 .page-area { padding-top: $navbar-offset; overflow-y: scroll }
 
 body.registration {
