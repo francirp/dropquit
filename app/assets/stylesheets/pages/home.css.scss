@@ -2,7 +2,7 @@ $grid-small-three: 1;
 
 .home{
   .main_img {
-    background:#000 image-url('kick.png') no-repeat center center;
+    background:#000 image-url('kick.jpg') no-repeat center center;
     height: 600px;
     @include backgroundSize(cover);
     padding-top:20em;
