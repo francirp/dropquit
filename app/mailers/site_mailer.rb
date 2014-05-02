@@ -25,4 +25,12 @@ class SiteMailer < ActionMailer::Base
       )
   end
 
+  def notify_admin_of_new_user(user)
+    @user = user
+    mail(
+      to: SiteMailer.admin_email_address,
+      subject: "New User!"
+      )
+  end
+
 end

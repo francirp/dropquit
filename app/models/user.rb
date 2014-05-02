@@ -9,9 +9,11 @@ class User < ActiveRecord::Base
   has_many :checkpoints, dependent: :destroy
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates :email, :handle, presence: true, uniqueness: true
+
+  after_create :send_notification_to_admin
 
   scope :todays_new_members, -> { where("created_at>=? AND created_at<=?", DateTime.now.beginning_of_day, DateTime.now.end_of_day) }
 
@@ -71,5 +73,11 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  private
+
+    def send_notification_to_admin
+      SiteMailer.notify_admin_of_new_user(self).deliver
+    end
 
 end

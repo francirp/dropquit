@@ -4,19 +4,19 @@ class QuitsController < ApplicationController
 
   # GET /quits
   # GET /quits.json
-  def index
-    @quits = Quit.all
-  end
+  # def index
+  #   @quits = Quit.all
+  # end
 
   # GET /quits/1
   # GET /quits/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /quits/new
-  def new
-    @quit = Quit.new()
-  end
+  # def new
+  #   @quit = Quit.new
+  # end
 
   # GET /quits/1/edit
   def edit

@@ -4,17 +4,16 @@ class RegistrationsController < Devise::RegistrationsController
   layout "application", only: [:edit, :update]
 
   def new
-    pull_lead
+    @lead = Lead.new(amount: params[:amount], group: params[:group], roll_call: params[:roll_call])
     super
   end
 
   def create
     build_resource(sign_up_params)
-    pull_lead
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
-      resource.quits.create(length: Quit::Lengths::DEFAULT, start_date: Date.today, substance: params[:group], investment: params[:investment])
+      quit = resource.quits.create(length: Quit::Lengths::DEFAULT, substance: params[:group], investment: params[:amount])
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
@@ -34,10 +33,6 @@ class RegistrationsController < Devise::RegistrationsController
 
     def after_update_path_for(resource)
       edit_registration_path(resource)
-    end
-
-    def pull_lead
-      @lead = Lead.new(amount: params[:amount], group: params[:group], roll_call: params[:roll_call])
     end
 
     def update_resource(resource, params)
