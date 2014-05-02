@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   scope :todays_user_posts, ->(user) { where("user_id=? AND created_at>=? AND created_at<=?", user.id, AppSettings.central_time.beginning_of_day, AppSettings.central_time.end_of_day) }
   scope :todays_posts, ->{ where("created_at>=? AND created_at<=?", AppSettings.central_time.beginning_of_day, AppSettings.central_time.end_of_day) }
 
+  validates :user_id, :content, presence: true
+
   def checkpoint?
     self.type == 'Checkpoint'
   end

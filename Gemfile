@@ -22,7 +22,6 @@ gem 'aws-sdk'
 gem 'acts_as_commentable_with_threading'
 gem 'kaminari'
 gem 'newrelic_rpm'
-gem 'rails_12factor'
 
 group :doc do
   gem 'sdoc', require: false
@@ -44,4 +43,8 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"
+end
+
+group :production do
+  gem 'rails_12factor'
 end
